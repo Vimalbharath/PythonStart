@@ -11,8 +11,9 @@ class Solution:
             elif letters[m]>target:
                 e=m-1
             else:
+                s=m+1
                 break
-        return letters[s%len(letters)-1]
+        return letters[s%len(letters)]
     
 # 1. Create an instance of the Solution class.
 solution_instance = Solution()
