@@ -1,6 +1,6 @@
 num=int(input("Enter a number: "))
 
-
+ans=0
 
 while num>0:
     temp=num%10
