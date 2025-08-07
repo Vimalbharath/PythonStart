@@ -6,13 +6,10 @@ class Solution:
         s,e=0,len(letters)-1
         while s<=e:
             m=s+(e-s)//2
-            if letters[m]<target:
-                s=m+1
-            elif letters[m]>target:
+            if letters[m]>target:
                 e=m-1
-            else:
-                s=m+1
-                break
+            else: # letters[m] <= target
+                s = m + 1
         return letters[s%len(letters)]
     
 # 1. Create an instance of the Solution class.
