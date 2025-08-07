@@ -8,3 +8,5 @@ Aug-8-2025
 string like array, collection crud - list,tuple,set,dict
 methods-arbitary arguments, keyword arguments
 class method use self, // integer division
+cs50 binary search, binary search same- corrected on while s<=e: s=m+1 e=m-1
+leetcode run in local : 1. instance of class 2. call method from instance
