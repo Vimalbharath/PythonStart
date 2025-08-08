@@ -14,4 +14,4 @@ smallest char - modulo , ceiling
 
 Aug-9-2025
 first and last search - tricky, helper func
-mountain,rbs -
+mountain,rbs -return s or e but while s<e, always m <>m+1 used both
