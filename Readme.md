@@ -10,3 +10,7 @@ methods-arbitary arguments, keyword arguments
 class method use self, // integer division
 cs50 binary search, binary search same- corrected on while s<=e: s=m+1 e=m-1
 leetcode run in local : 1. instance of class 2. call method from instance
+smallest char - modulo , ceiling
+
+Aug-9-2025
+first and last search - tricky, helper func
