@@ -4,11 +4,13 @@ def main():
     print(nums)
 
 def cyclic(nums):
-    n=len(nums)
-    for i in range(n):
+    i,n=0,len(nums)
+    while i<n:
         actual=i
-        while nums[i]!=actual:
+        if nums[i]!=actual:
             swap(nums,i,nums[i])
+        else:
+            i=i+1
 
 def swap(nums,f,s):
     nums[f],nums[s]=nums[s],nums[f]

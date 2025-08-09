@@ -22,3 +22,4 @@ RBS-pivot-code, [range 0- n-1 -> n< arr.length]
 Bubble n n2 stable-break,
 Selection n2 n2 unstable (small) -max,
 Insertion- n n2 stable while range to 0,partial-hybrid
+Cyclic - o(1), 0-N, actual,for by while, while by if - o(1)
