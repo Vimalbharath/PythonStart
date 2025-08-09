@@ -1,6 +1,6 @@
 def main():
     nums=[3,0,9,8,4]
-    max(nums,0,len(nums))
+    selection(nums)
     print(nums)
 
 def selection(nums):
@@ -9,15 +9,17 @@ def selection(nums):
     # for i in range(n):
     #     print(i, "->", nums[i])
     for i in range(n):
-        pass
+        l=n-i
+        maxpos=max(nums,0,l)
+        swap(nums,l,maxpos)
 
 def max(nums,s,e):
+    max=s
     for x in range(s,e):
-        max=nums[s]
-        if nums[x]>max:
-            max=nums[x]
-            print(max) 
-    print(max) 
+        if nums[x]>nums[max]:
+            max=x
+    #print(max) 
+    return max
 
 
 def swap(nums,f,s):
