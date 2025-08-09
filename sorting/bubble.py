@@ -1,5 +1,5 @@
 def main():
-    nums=[3,0,9,8,4,-1,-2,7,90,80,70,67,100,1]
+    nums=[3,0,9,8,4]
     bubble(nums)
     print(nums)
 
@@ -8,9 +8,11 @@ def bubble(nums):
     for i in range(0,l):
         swapped=False
         for j in range(1,l-i):
+            print(j,end=" ")
             if nums[j]<nums[j-1]:
                 swapped=True
                 swap(nums,j,j-1)
+        print()
         if swapped==False:
             break
 
