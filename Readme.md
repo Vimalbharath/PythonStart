@@ -16,3 +16,6 @@ Aug-9-2025
 first and last search - tricky, helper func
 mountain,rbs -return s or e but while s<e, always m <>m+1 used both {goole docs try}
 rbs-pivot 4 cases
+
+Aug-10-2025
+RBS-pivot-code, Bubble-break, Selection -max, Insertion- while range to 0

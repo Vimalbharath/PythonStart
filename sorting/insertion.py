@@ -6,9 +6,11 @@ def main():
 def insertion(nums):
     n=len(nums)
     for i in range(1,n):
-        for j in range(1,i):
+        j=i
+        while j>0:
             if nums[j-1]>nums[j]:
                 swap(nums,j,j-1)
+            j=j-1
 
 def swap(nums,f,s):
     nums[f],nums[s]=nums[s],nums[f]
