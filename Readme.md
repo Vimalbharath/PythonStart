@@ -18,4 +18,7 @@ mountain,rbs -return s or e but while s<e, always m <>m+1 used both {goole docs 
 rbs-pivot 4 cases
 
 Aug-10-2025
-RBS-pivot-code, Bubble-break, Selection -max, Insertion- while range to 0
+RBS-pivot-code, [range 0- n-1 -> n< arr.length]
+Bubble n n2 stable-break,
+Selection n2 n2 unstable (small) -max,
+Insertion- n n2 stable while range to 0,partial-hybrid

@@ -10,6 +10,8 @@ def insertion(nums):
         while j>0:
             if nums[j-1]>nums[j]:
                 swap(nums,j,j-1)
+            else:
+                break
             j=j-1
 
 def swap(nums,f,s):

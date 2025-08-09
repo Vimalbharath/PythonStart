@@ -9,9 +9,9 @@ def selection(nums):
     # for i in range(n):
     #     print(i, "->", nums[i])
     for i in range(n):
-        l=n-i
-        maxpos=max(nums,0,l)
-        swap(nums,l-1,maxpos)
+        l=n-i-1
+        maxpos=max(nums,0,l+1)#since using range in max, making code similar to java
+        swap(nums,l,maxpos)
 
 def max(nums,s,e):
     max=s
