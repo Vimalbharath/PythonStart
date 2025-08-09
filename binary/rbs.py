@@ -28,9 +28,10 @@ class Solution:
             m=s+(e-s)//2
             if m<e and nums[m]>nums[m+1]:
                 return m
-            if nums[m-1]>nums[m]:
+            if m>s and nums[m-1]>nums[m]:
                 return m-1
             if nums[s]>nums[m]:
                 e=m-1
             else:
                 s=m+1
+        return -1
