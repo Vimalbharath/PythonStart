@@ -1,10 +1,10 @@
 def main():
-    nums=[3,9,8,4,7]
+    nums=[3,0,9,8,4,-1,-2,7,90,80,70,67,100,1]
     bubble(nums)
     print(nums)
 
 def bubble(nums):
-    l=len(nums)-1
+    l=len(nums)
     for i in range(0,l):
         swapped=False
         for j in range(1,l-i):
@@ -16,9 +16,7 @@ def bubble(nums):
 
 
 def swap(nums,f,s):
-    temp=nums[f]
-    nums[f]=nums[s]
-    nums[s]=temp
+   nums[f],nums[s]=nums[s],nums[f]
 
 if __name__=="__main__":
     main()
