@@ -1,5 +1,5 @@
 def main():
-    nums=[3,0,9,8,4]
+    nums=[3,0,9,8,4,-1,-2,7,90,80,70,67,100,1]
     selection(nums)
     print(nums)
 
@@ -11,7 +11,7 @@ def selection(nums):
     for i in range(n):
         l=n-i
         maxpos=max(nums,0,l)
-        swap(nums,l,maxpos)
+        swap(nums,l-1,maxpos)
 
 def max(nums,s,e):
     max=s
