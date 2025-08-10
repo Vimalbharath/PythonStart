@@ -1,5 +1,5 @@
 def main():
-    pattern4(5)
+    pattern6(5)
     #pattern5(5)
     
 def pattern1(n):
@@ -32,6 +32,13 @@ def pattern5(n):
         #print(n-i)
         for j in range(n-i):
             print(j,end=" ")
+        print()
+
+def pattern6(n):
+    for i in range(2*n):
+        col=2*n-i if i>n else i
+        for j in range(col):
+            print(j+1,end=" ")
         print()
 
 if __name__=="__main__":
