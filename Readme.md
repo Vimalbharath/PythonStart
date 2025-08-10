@@ -23,3 +23,7 @@ Bubble n n2 stable-break,
 Selection n2 n2 unstable (small) -max,
 Insertion- n n2 stable while range to 0,partial-hybrid
 Cyclic - o(1), 0-N, actual,for by while, while by if - o(1)
+
+Actual Aug-10-2025
+Cyclic code confusing actual from 0 or 1, OG duplicate
+missing number- nums[i] <n ignore, duplicate: only copy
