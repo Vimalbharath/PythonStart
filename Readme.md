@@ -28,4 +28,5 @@ Actual Aug-10-2025
 Cyclic code confusing actual from 0 or 1, OG duplicate
 missing number- nums[i] <n ignore, duplicate: only copy
 Video- duplicate (single pass), all missing duplicates same code
-from 0 or 1, actualindex= nums[i], nums[i]-1
+from 0 or 1, actualindex= nums[i], nums[i]-1,
+missing positive- hard -> easy
