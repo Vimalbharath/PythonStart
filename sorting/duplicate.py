@@ -7,15 +7,24 @@ class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         i,n=0,len(nums)
         while i<n:
-            if nums[i]!=i+1:
-                actual=nums[i]-1
-                if nums[i]!=nums[actual]:
-                    self.swap(nums,i,actual)
-                else:
-                    return nums[i]
+            actual=nums[i]
+            if nums[i]<n and nums[i]!=nums[actual]:
+                self.swap(nums,i,actual)
             else:
                 i=i+1
-        return -1
+        missingnumbers=[]
+        for i in range(n):
+            if i!=nums[i]:
+                missingnumbers.append(i)
+        print("Missing",missingnumbers)
+
+        duplicatenumbers=[]
+        for i in range(n):
+            if i!=nums[i]:
+                duplicatenumbers.append(nums[i])
+        print("Duplicate",duplicatenumbers)
+        
+
     
     def swap(self,nums,f,s):
         nums[f],nums[s]=nums[s],nums[f]
