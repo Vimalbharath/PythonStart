@@ -7,20 +7,20 @@ class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         i,n=0,len(nums)
         while i<n:
-            actual=nums[i]
-            if nums[i]<n and nums[i]!=nums[actual]:
+            actual=nums[i]-1
+            if  nums[i]!=nums[actual]:
                 self.swap(nums,i,actual)
             else:
                 i=i+1
         missingnumbers=[]
         for i in range(n):
-            if i!=nums[i]:
-                missingnumbers.append(i)
+            if i!=nums[i]-1:
+                missingnumbers.append(i+1)
         print("Missing",missingnumbers)
 
         duplicatenumbers=[]
         for i in range(n):
-            if i!=nums[i]:
+            if i!=nums[i]-1:
                 duplicatenumbers.append(nums[i])
         print("Duplicate",duplicatenumbers)
         
@@ -31,7 +31,7 @@ class Solution:
             
 def main():
     instance=Solution()
-    nums=[1,7,8,6,6,4,3,2,0,5,9,7]
+    nums=[4,3,2,7,8,2,3,1]
     print(instance.findDuplicate(nums))
     print(nums)
 
