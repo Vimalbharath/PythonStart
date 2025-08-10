@@ -29,4 +29,5 @@ Cyclic code confusing actual from 0 or 1, OG duplicate
 missing number- nums[i] <n ignore, duplicate: only copy
 Video- duplicate (single pass), all missing duplicates same code
 from 0 or 1, actualindex= nums[i], nums[i]-1,
-missing positive- hard -> easy, setmismatch- solved in java, python but nums[i] < (n+1\*) ignore
+missing positive- hard -> easy, setmismatch- solved in java, python but nums[i] < (n+1\*) ignore,
+Pattern : easy, range(0,0) is empty

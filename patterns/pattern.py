@@ -1,0 +1,38 @@
+def main():
+    pattern4(5)
+    #pattern5(5)
+    
+def pattern1(n):
+    for i in range(n):
+        for j in range(n):
+            print("* ",end="")
+        print()
+
+def pattern2(n):
+    for i in range(n+1):
+        for j in range(i):
+            print("* ",end="")
+        print()
+
+def pattern3(n):
+    for i in range(n):
+        for j in range(n-i):
+            print("* ",end="")
+        print()
+
+def pattern4(n):
+    for i in range(n):
+        #print(i) range(0,0) is empty
+        for j in range(i+1):
+            print(j,end=" ")
+        print()
+
+def pattern5(n):
+    for i in range(n):
+        #print(n-i)
+        for j in range(n-i):
+            print(j,end=" ")
+        print()
+
+if __name__=="__main__":
+    main()
