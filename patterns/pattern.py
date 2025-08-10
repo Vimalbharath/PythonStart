@@ -1,6 +1,8 @@
 def main():
     pattern8(5)
     #pattern5(5)
+    # for i in range(6,0,-1):
+    #     print(i)
     
 def pattern1(n):
     for i in range(n):
@@ -52,12 +54,12 @@ def pattern7(n):
         print()
 
 def pattern8(n):
-    for i in range(n):
-        for k in range(n-i+1):
-            print(end=" ")
+    for i in range(1,n+1):
+        for k in range(n-i):
+            print(end="  ")
         for m in range(i):
             print("*",end=" ")
-        for j in range(i):
+        for j in range(1,i):
             print("*",end=" ")
         print()
 
