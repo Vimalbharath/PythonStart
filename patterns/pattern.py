@@ -1,5 +1,5 @@
 def main():
-    pattern7(5)
+    pattern8(5)
     #pattern5(5)
     
 def pattern1(n):
@@ -49,6 +49,16 @@ def pattern7(n):
             print(end=" ")
         for j in range(col):
             print(j+1,end=" ")
+        print()
+
+def pattern8(n):
+    for i in range(n):
+        for k in range(n-i+1):
+            print(end=" ")
+        for m in range(i):
+            print("*",end=" ")
+        for j in range(i):
+            print("*",end=" ")
         print()
 
 if __name__=="__main__":

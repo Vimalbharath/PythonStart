@@ -31,3 +31,4 @@ Video- duplicate (single pass), all missing duplicates same code
 from 0 or 1, actualindex= nums[i], nums[i]-1,
 missing positive- hard -> easy, setmismatch- solved in java, python but nums[i] < (n+1\*) ignore,
 Pattern : easy, range(0,0) is empty, ternary : col=2\*n-i if i>n else i,diamond spaces
+up down with spaces perfect, right left mess
