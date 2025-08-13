@@ -35,4 +35,4 @@ up down with spaces perfect, right left mess-trick python, reverse loop: for i i
 
 Aug-11 Recursion, intro, basics
 
-Aug-13 Reverse-way to use global variable
+Aug-13 Reverse-way to use global variable,digits=math.log(n)+1 confused,
