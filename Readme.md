@@ -34,3 +34,5 @@ Pattern : easy, range(0,0) is empty, ternary : col=2\*n-i if i>n else i,diamond 
 up down with spaces perfect, right left mess-trick python, reverse loop: for i in range(6,0,-1),
 
 Aug-11 Recursion, intro, basics
+
+Aug-13 Reverse-way to use global variable
