@@ -1,4 +1,4 @@
-def linear(nums,target): #list as argument
+def linear(nums,target): #list as argument, accumulator
     return helper(nums,target,0,[])
 
 def helper(nums,target,index,ans):

@@ -36,4 +36,4 @@ up down with spaces perfect, right left mess-trick python, reverse loop: for i i
 Aug-11 Recursion, intro, basics
 
 Aug-13 Reverse-way to use global variable,digits=math.log(n)+1 confused,digits=int(math.log10(n))+1 perfect
-steps,zeros easy,Array Search-sorted?,linear rec-single,many-parameter,global ok, new list confuse
+steps,zeros easy,Array Search-sorted?,linear rec-single,many-parameter (accumulator) ,global ok, new list confuse-return and combine

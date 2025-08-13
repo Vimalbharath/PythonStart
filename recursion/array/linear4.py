@@ -1,4 +1,4 @@
-def linear(nums,target): #list inside func
+def linear(nums,target): #list inside func,return and combine
     return helper(nums,target,0)
 
 def helper(nums,target,index):
@@ -7,7 +7,9 @@ def helper(nums,target,index):
         return []
     if nums[index]==target:
         ans.append(index)
-    return ans.append(helper(nums,target,index+1))
+    prev=helper(nums,target,index+1)
+    ans.extend(prev)
+    return ans
 
 def main():
     nums=[1,2,4,90,5,4,7,9]
