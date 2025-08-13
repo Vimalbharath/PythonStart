@@ -1,7 +1,7 @@
 import math
 
 def reverse(n):
-    digits=math.log(n)+1
+    digits=int(math.log10(n))+1
     return helper(n,digits)
 
 def helper(n,digits):
@@ -10,6 +10,8 @@ def helper(n,digits):
     return (n%10)* 10**(digits-1) + helper(n//10,digits-1)
 
 def main():
-    print(reverse(12345))
-
+    n=123454321
+    rev=reverse(n)
+    print(rev)
+    print(True if n==rev else  False)
 main()
