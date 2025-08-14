@@ -2,12 +2,15 @@ def pattern(r,c):
     if r==0:
         return 
     
-    if c<5:
-        print("* ",end="")
+    if c<r:
+       
         pattern(r,c+1)
+        print("* ",end="")
+        
     else:
-        print()
+        
         pattern(r-1,0)
+        print()
     
 
 def main():
