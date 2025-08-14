@@ -39,3 +39,4 @@ Aug-13 Reverse-way to use global variable,digits=math.log(n)+1 confused,digits=i
 steps,zeros easy,Array Search-sorted?,linear rec-single,many-parameter (accumulator) ,global ok, new list confuse-return and combine
 
 August-14-2025 : RBS first rec pivot, confusing, video not clear, gemini- left or right sort, inside or out
+pattern- how to reset value again,
