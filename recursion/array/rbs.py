@@ -2,16 +2,18 @@ def rbs(nums,target,s,e):
     if s>e:
         return -1
     m=s+(e-s)//2
-    # if e>m and nums[m]>nums[m+1]:
-    #     return m
-    # if s<m and nums[m]<nums[m-1]:
-    #     return m
     if nums[m]==target:
         return m
-    if nums[s]<nums[m]:
-        return rbs(nums,target,s,m-1)
+    if nums[s]<=nums[m]:
+        if nums[s]<=target<nums[m]:
+            return rbs(nums,target,s,m-1)
+        else:
+            return rbs(nums,target,m+1,e)
     else:
-        return rbs(nums,target,m+1,e)
+        if nums[m]<target<=nums[e]:
+            return rbs(nums,target,m+1,e)
+        else:
+            return rbs(nums,target,s,m-1)
     
 def main():
     nums=[6,7,8,9,1,2,4]
