@@ -40,3 +40,5 @@ steps,zeros easy,Array Search-sorted?,linear rec-single,many-parameter (accumula
 
 August-14-2025 : RBS first rec pivot, confusing, video not clear, gemini- left or right sort, inside or out
 pattern- how to reset value again,while return print reverse basic,bubble fine
+
+August-15-2025 : Selection if c<=r:swap(nums,max,c-1)
