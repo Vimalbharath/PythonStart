@@ -1,6 +1,7 @@
 def mergesort(nums,s,e):
-    if len(nums)==1:
-        return nums
+    if s==e:
+        return [nums[s]]
+    
     
     m=s+(e-s)//2
     left=mergesort(nums,s,m)
@@ -10,7 +11,7 @@ def mergesort(nums,s,e):
 
 def merge(left,right):
     ans=[]
-    i,j,k=0,0,0
+    i,j=0,0
     while i<len(left) and j<len(right):
         if left[i]<right[j]:
             ans.append(left[i])
@@ -20,13 +21,15 @@ def merge(left,right):
             j=j+1
     while i<len(left):
         ans.append(left[i])
+        i=i+1
     while j<len(right):
         ans.append(right[j])
+        j=j+1
 
     return ans
 
 def main():
-    nums=[4,3,2,1]
+    nums=[4,3,2,1,9,5,7,6,0]
     print(mergesort(nums,0,len(nums)-1))
 
 main()
