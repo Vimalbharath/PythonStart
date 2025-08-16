@@ -43,4 +43,4 @@ pattern- how to reset value again,while return print reverse basic,bubble fine
 
 August-15-2025 : Selection if c<=r:swap(nums,max,c-1), if r==0, if r<0, Merge Sort : light base condition, if s==e: return [nums[s]]
 
-August-16-2025 : implemented as per video
+August-16-2025 : best n logn, worst n2,implemented as per video, used if here and check for low high while nums[s]<pivot: s=s+1 while nums[e]>pivot: e=e-1
