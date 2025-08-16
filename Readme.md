@@ -42,3 +42,5 @@ August-14-2025 : RBS first rec pivot, confusing, video not clear, gemini- left o
 pattern- how to reset value again,while return print reverse basic,bubble fine
 
 August-15-2025 : Selection if c<=r:swap(nums,max,c-1), if r==0, if r<0, Merge Sort : light base condition, if s==e: return [nums[s]]
+
+August-16-2025 : implemented as per video
