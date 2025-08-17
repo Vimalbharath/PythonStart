@@ -13,8 +13,8 @@ def skip(p,up):
 
 def skipret(up):
     if len(up)==0:
-        return []
-    ans=[]
+        return ""
+    ans=""
     if up[0]=='a':
        ans.append(skipret(up[1:]))
        return ans

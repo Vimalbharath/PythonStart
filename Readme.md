@@ -45,4 +45,4 @@ August-15-2025 : Selection if c<=r:swap(nums,max,c-1), if r==0, if r<0, Merge So
 
 August-16-2025 : best n logn, worst n2,implemented as per video, used if here and check for low high while nums[s]<pivot: s=s+1 while nums[e]>pivot: e=e-1
 
-August-17-2025 : string - consider like array,skip accumulator ok, return and combine none: ans alone,append error
+August-17-2025 : string - consider like array,skip accumulator ok, return and combine none: ans alone,append error, 'str' object has no attribute 'append',
