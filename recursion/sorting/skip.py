@@ -15,13 +15,10 @@ def skip(p,up):
 def skipret(up):
     if len(up)==0:
         return ""
-    ans=""
-    if up[0]=='a':
-       ans=ans+(skipret(up[1:]))
-       return ans
+    ch=up[0]
+    if ch=='a':
+       return skipret(up[1:])
     else:
-        ans=ans+(up[0])
-        ans=ans+(skipret(up[1:]))
-        return ans
+        return ch+skipret(up[1:])
 
 main()
