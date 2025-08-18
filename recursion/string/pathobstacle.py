@@ -5,7 +5,7 @@ def main():
     pathobs('',board,0,0)
 
 def pathobs(p,board,r,c):
-    if r>len(board)-1 and c>len(board[0])-1:
+    if r==len(board)-1 and c==len(board[0])-1:
         print(p)
         return 
     if board[r][c]==False:
