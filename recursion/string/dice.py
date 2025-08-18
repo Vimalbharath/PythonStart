@@ -1,5 +1,5 @@
 def main():
-    print(dice(4,[]))
+    print(dice(4,""))
 
 def dice(target,ans):
     if target==0:
@@ -8,8 +8,8 @@ def dice(target,ans):
     count=0
     for i in range(1,6):
         if i <= target:
-            ans.append(i)
-            count=count+dice(target-i,ans)
+            
+            count=count+dice(target-i,ans+str(i))
     return count
 
 main()
