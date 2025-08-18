@@ -52,4 +52,4 @@ ascii=str(ord(up[0])),permutation range confuse
 August-18-2025 : print path error or works and fails, subtract before check,obstacle no reaction,missed return equal,all path board success,path success,phone single case good,return ok, loop confuse,copy 7 and 9 fail,Need to use map,dice,all ans print,processed miss,use extend for list,
 N- queens : matrix = [[True for _ in range(3)] for \_ in range(3)]
 converted_matrix = [['Q' if val else '.' for val in row] for row in boolean_matrix]
-no clear approach, only isSafe try,video loop- infinite,
+no clear approach, only isSafe try,video loop- infinite,video copy leetcode giveup.

@@ -13,17 +13,25 @@ class Solution:
             print(ans)
             return
         for c in range(len(board[0])):
-            if not self.isSafe(board,r,c):
+            if self.isSafe(board,r,c):
                 board[r][c]=True
                 self.helper(board,r+1)
                 board[r][c]=False
 
     def isSafe(self,board,r,c):
         for i in range(r):
-            if(board[r][c]==False):
+            if board[i][c]:
                 return False
-        #leftMin=math.min(r,c)
-        return False
+        leftMin=min(r,c)
+        for i in range(1,leftMin+1):
+            if board[r-i][c-i]:
+                return False
+        rightMin=min(r,len(board[0])-1-c)
+        for i in range(1,rightMin+1):
+            if board[r-i][c+i]:
+                return False
+
+        return True
 
 
 def main():
