@@ -11,9 +11,9 @@ class Solution:
       if len(digits)==0:
         return [p]
       ans=[]
-      ch=97+(ord(digits[0])-50)
-      for i in range(3):
-          ans.extend(self.helper(chr(ch+i)+p,digits[1:]))
+      digit=ord(digits[0])-49
+      for i in range((digit-1)*3,digit*3):
+          ans.extend(self.helper(p+chr(97+i),digits[1:]))
       return ans
 
 def main():
