@@ -9,15 +9,15 @@ class Solution:
 
     def helper(self,p,digits):
       if len(digits)==0:
-        return chr(p)
+        return [p]
       ans=[]
-      ch=ord(digits[0])+47
+      ch=97+(ord(digits[0])-50)
       for i in range(3):
-          ans.append(self.helper(ch+i,digits[1:]))
+          ans.extend(self.helper(chr(ch+i)+p,digits[1:]))
       return ans
 
 def main():
    sol=Solution()
-   print(sol.letterCombinations('2'))
+   print(sol.letterCombinations('23'))
 
 main()
