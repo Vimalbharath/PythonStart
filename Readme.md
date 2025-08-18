@@ -48,3 +48,5 @@ August-16-2025 : best n logn, worst n2,implemented as per video, used if here an
 August-17-2025 : string - consider like array,skip accumulator ok, return and combine none: ans alone,append error, 'str' object has no attribute 'append',concatenate but performance issue,
 Skip word- startswith,return not in,substring print easy, ret issue,video ans-two pass ret list of p,
 ascii=str(ord(up[0])),permutation range confuse
+
+August-18-2025 : print path error or works and fails,
