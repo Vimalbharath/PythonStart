@@ -3,14 +3,13 @@ def main():
 
 def dice(target,ans):
     if target==0:
-        print(ans)
-        return 1
-    count=0
+        return [ans]
+    res=[]
     for i in range(1,6):
         if i <= target:
             
-            count=count+dice(target-i,ans+str(i))
-    return count
+            res.extend(dice(target-i,ans+str(i)))
+    return res
 
 main()
         
