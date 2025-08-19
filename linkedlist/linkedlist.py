@@ -43,6 +43,7 @@ class LinkedList:
         node=self.head
         while index>0:
             node=node.next
+            index=index-1
         return node
         
     def deletefirst(self):
@@ -52,6 +53,15 @@ class LinkedList:
         self.head=self.head.next
         if self.head==None:
             self.tail=None
+        self.size=self.size-1
+
+    def deletelast(self):
+        if self.size<=1:
+            self.deletefirst()
+            return
+        prev=self.nodeat(self.size-2)
+        self.tail=prev
+        prev.next=None
         self.size=self.size-1
         
     def display(self):
@@ -64,14 +74,20 @@ class LinkedList:
 def main():
     list=LinkedList()
     list.addFirst(0)
-    # list.addFirst(1)
-    # list.addFirst(2)
-    # list.addlast(3)
-    # list.addatindex(100,1)
-    # list.addatindex(200,0)
-    # list.addatindex(300,6)
+    list.addFirst(1)
+    list.addFirst(2)
+    list.addlast(3)
+    list.addatindex(100,1)
+    list.addatindex(200,0)
+    list.addatindex(300,6)
     list.deletefirst()
     list.deletefirst()
+    list.deletelast()
+    list.deletelast()
+    list.deletelast()
+    list.deletelast()
+    list.deletelast()
+    list.deletelast()
     list.display()
 
 if __name__=="__main__":
