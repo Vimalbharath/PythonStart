@@ -17,6 +17,35 @@ class LinkedList:
             self.tail=self.head
         self.size=self.size+1
 
+    def addlast(self,val):
+        if self.head==None:
+            self.addFirst(val)
+            return
+        node=self.Node(val)
+        self.tail.next=node
+        self.tail=node
+        self.size=self.size+1
+
+    def addatindex(self,val,index):
+        if index==0:
+            self.addFirst(val)
+            return 
+        if index==self.size:
+            self.addlast(val)
+            return
+        node=self.Node(val)
+        prevnode=self.nodeat(index-1)
+        node.next=prevnode.next
+        prevnode.next=node
+        self.size=self.size+1
+
+    def nodeat(self,index):
+        node=self.head
+        while index>0:
+            node=node.next
+        return node
+        
+        
     def display(self):
         node=self.head
         while not node==None:
@@ -29,6 +58,10 @@ def main():
     list.addFirst(0)
     list.addFirst(1)
     list.addFirst(2)
+    list.addlast(3)
+    list.addatindex(100,1)
+    list.addatindex(200,0)
+    list.addatindex(300,6)
     list.display()
 
 if __name__=="__main__":
