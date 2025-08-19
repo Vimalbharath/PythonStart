@@ -53,3 +53,5 @@ August-18-2025 : print path error or works and fails, subtract before check,obst
 N- queens : matrix = [[True for _ in range(3)] for \_ in range(3)]
 converted_matrix = [['Q' if val else '.' for val in row] for row in boolean_matrix]
 no clear approach, only isSafe try,video loop- infinite,video copy leetcode giveup.
+
+August-19-2025 : OOPS- Linked list in java success, python confuse,Node inside call,
