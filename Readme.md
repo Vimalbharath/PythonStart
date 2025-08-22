@@ -56,4 +56,4 @@ no clear approach, only isSafe try,video loop- infinite,video copy leetcode give
 
 August-19-2025 : OOPS- Linked list in java success, python confuse,Node inside call,too many self add first worked fine,add perfect,delete perfect,doubly insert,display
 
-August-22-2025 : Circular LL skip, insert rec try wrong, debug,
+August-22-2025 : Circular LL skip, insert rec try wrong, debug,recursion return good,

@@ -39,6 +39,19 @@ class LinkedList:
         prevnode.next=node
         self.size=self.size+1
 
+    def addrec2(self,val,index):
+        self.head=self.helper2(val,index,self.head)
+        return self.head
+    
+    def helper2(self,val,index,node):
+        if index==0:
+            temp=self.Node(val)
+            temp.next=node
+            return temp
+        node.next=self.helper2(val,index-1,node.next)
+        return node
+        
+
     def addrec(self,val,index):
         temp=self.head
         self.helper(val,index,self.head)
@@ -96,12 +109,12 @@ def main():
     list.addFirst(1)
     list.addFirst(2)
     list.addlast(3)
-    # list.addatindex(100,1)
-    # list.addatindex(200,0)
-    # list.addatindex(300,6)
-    list.addrec(100,1)
-    list.addrec(200,0)
-    list.addrec(300,6)
+    list.addatindex(100,1)
+    list.addatindex(200,0)
+    list.addatindex(300,6)
+    # list.addrec2(100,1)
+    # list.addrec2(200,0)
+    # list.addrec2(300,6)
     # list.deletefirst()
     # list.deletefirst()
     # list.deletelast()
