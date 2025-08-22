@@ -41,16 +41,18 @@ class LinkedList:
 
     def addrec(self,val,index):
         temp=self.head
-        self.helper(val,index,temp)
+        self.helper(val,index,self.head)
 
     def helper(self,val,index,temp):
         if index==0:
             node=self.Node(val)
+            self.size=self.size+1
             node.next=self.head
             self.head=node
             return
         if index==1:
             node=self.Node(val)
+            self.size=self.size+1
             node.next=temp.next
             temp.next=node
             return
