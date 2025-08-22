@@ -46,6 +46,11 @@ class LinkedList:
     def helper(self,val,index,temp):
         if index==0:
             node=self.Node(val)
+            node.next=self.head
+            self.head=node
+            return
+        if index==1:
+            node=self.Node(val)
             node.next=temp.next
             temp.next=node
             return
@@ -94,7 +99,7 @@ def main():
     # list.addatindex(300,6)
     list.addrec(100,1)
     list.addrec(200,0)
-    #list.addrec(300,6)
+    list.addrec(300,6)
     # list.deletefirst()
     # list.deletefirst()
     # list.deletelast()
