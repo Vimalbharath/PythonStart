@@ -58,4 +58,4 @@ August-19-2025 : OOPS- Linked list in java success, python confuse,Node inside c
 
 August-22-2025 : Circular LL skip, insert rec try wrong, debug,recursion return good,duplicates try sample case pass,while,local run,
 
-August-23-2025 : sort 2 ll, 1hour try perfect ans,
+August-23-2025 : sort 2 ll, 1hour try perfect ans,cycle ok,
