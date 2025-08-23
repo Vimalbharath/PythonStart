@@ -22,8 +22,8 @@ class Solution:
         while not temp.next==mid:
             temp=temp.next
         temp.next=None
-        list1=node
-        list2=mid
+        list1=self.mergesort(node)
+        list2=self.mergesort(mid)
         ans=self.mergesorted(list1,list2)
         return ans
     def middle(self,head):
@@ -36,6 +36,7 @@ class Solution:
 
     def mergesorted(self,list1,list2):
         node=ListNode()
+        head=node
         while list1 and list2:
             if list1.val<=list2.val:
                 node.next=ListNode(list1.val)
@@ -53,7 +54,7 @@ class Solution:
                 node.next=ListNode(list2.val)
                 node=node.next
                 list2=list2.next
-        return node.next
+        return head.next
     
 # Helper function to create a linked list from a Python list
 def create_linked_list(arr):
