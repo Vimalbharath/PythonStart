@@ -13,20 +13,15 @@ class Solution:
         length=self.cyclelength(head)
         if length ==-1: return None
         temp=head
-        ans=head
-        while length > -1:
+        s=head
+        while length > 0:
             temp=temp.next
             length=length-1
-        k=temp
-        temp=temp.next
-        start=0
-        while not k==temp:
-            temp=temp.next
-            start=start+1
-        while start>-1:
-            ans=ans.next
-            start=start-1
-        return ans
+        f=temp
+        while not f==s:
+            f=f.next
+            s=s.next
+        return s
     
     def cyclelength(self,head):
         f=head
