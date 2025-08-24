@@ -95,6 +95,22 @@ class LinkedList:
         self.tail=prev
         prev.next=None
         self.size=self.size-1
+
+    def reverse1(self,head):
+        if not head.next:
+            return head
+        ans=self.reverse1(head.next)
+        return ans
+
+    def reverse2(self,head):
+        f,s=None,None
+        while not head.next:
+            temp=head
+            head=head.next
+            s=head
+            s.next=temp
+            f=temp
+        f=head
         
     def display(self):
         node=self.head
@@ -123,6 +139,8 @@ def main():
     # list.deletelast()
     # list.deletelast()
     # list.deletelast()
+    list.display()
+    list.reverse2(list.head)
     list.display()
 
 if __name__=="__main__":
