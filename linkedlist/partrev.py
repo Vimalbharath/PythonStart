@@ -10,14 +10,31 @@ class ListNode:
         self.next = next
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        leftnode=self.find(left)
-        rightnode=self.find(right)
+        if left==right:
+            return head
+        previous,current=None,head
+        dummyleft=left
+        while dummyleft>1 and current:
+            previous=current
+            current=current.next
+            dummyleft=dummyleft-1
 
-    def rev(self,prev,pres,next):
-        pass
+        last=previous
+        newEnd=current
 
-    def find(self,x):
-        node=self.head
-        while not node.val==x:
-            node=node.next
-        return node
+        bet=(right-left)+1
+        next=current.next
+        while bet>0 and current:
+            current.next=previous
+            previous=current
+            current=next
+            if current:
+                next=next.next
+            bet=bet-1
+        if last:
+            last.next=previous
+        else:
+            head=previous#self.head removed
+
+        newEnd.next=current
+        return head

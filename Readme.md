@@ -63,3 +63,4 @@ video concept, code modify,happy number solved on own,middle so easy,merge sort 
 
 August-24-2025 : ll bubble swap new but skip,reverse try no idea,only that is list,video easy work,
 rec copy, loop try debug but different,leetcode rev, part rev - find,rev??,understood question wrong, reverse part in given pos not node,even debug not helps,video not helps,dummyLeft debug half case pass,
+self.head removed
