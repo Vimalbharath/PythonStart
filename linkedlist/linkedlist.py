@@ -110,14 +110,14 @@ class LinkedList:
         
 
     def reverse2(self,head):
-        f,s=None,None
-        while not head.next:
-            temp=head
-            head=head.next
-            s=head
-            s.next=temp
-            f=temp
-        f=head
+        p,f,s=None,head,head.next
+        while s:
+           f.next=p
+           p=f
+           f=s
+           s=s.next 
+        f.next=p
+        self.head=f
         
     def display(self):
         node=self.head
@@ -147,7 +147,7 @@ def main():
     # list.deletelast()
     # list.deletelast()
     list.display()
-    list.reverse1(list.head)
+    list.reverse2(list.head)
     list.display()
 
 if __name__=="__main__":
