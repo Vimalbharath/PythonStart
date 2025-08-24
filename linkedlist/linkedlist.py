@@ -129,21 +129,29 @@ class LinkedList:
             return head
         previous,current=None,head
 
-        while left>1:
+        while left>1 and current:
             previous=current
             current=current.next
             left=left-1
 
+        last=previous
+        newEnd=current
+
         bet=right-left+1
         next=current.next
-        while bet>0 and current:
+        while bet>1 and current:
             current.next=previous
             previous=current
             current=next
             if current:
                 next=next.next
             bet=bet-1
-        current.next=previous
+        if last:
+            last.next=previous
+        else:
+            head=previous
+
+        newEnd.next=current
 
     def find(self,x):
         node=self.head
@@ -181,7 +189,7 @@ def main():
     list.display()
     #list.reverse2(list.head)
     print(list.find(1))
-    list.reverseBetween(list.head,1,5)
+    list.reverseBetween(list.head,4,5)
     list.display()
 
 if __name__=="__main__":
