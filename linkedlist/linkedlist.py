@@ -3,6 +3,9 @@ class LinkedList:
         def __init__(self,val) :
             self.val=val
             self.next=None
+
+        def __str__(self):
+            return str(self.val)
     
     def __init__(self):
         self.head=None
@@ -110,6 +113,8 @@ class LinkedList:
         
 
     def reverse2(self,head):
+        if head==None:
+            return None
         p,f,s=None,head,head.next
         while s:
            f.next=p
@@ -118,6 +123,12 @@ class LinkedList:
            s=s.next 
         f.next=p
         self.head=f
+
+    def find(self,x):
+        node=self.head
+        while not node.val==x:
+            node=node.next
+        return node
         
     def display(self):
         node=self.head
@@ -148,6 +159,7 @@ def main():
     # list.deletelast()
     list.display()
     list.reverse2(list.head)
+    print(list.find(1))
     list.display()
 
 if __name__=="__main__":

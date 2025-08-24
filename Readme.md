@@ -62,4 +62,4 @@ August-23-2025 : sort 2 ll, 1hour try perfect ans,cycle ok,cycle start unable to
 video concept, code modify,happy number solved on own,middle so easy,merge sort ll,local no issue but empty,debug ans correct,(cycle fast slow pointer)
 
 August-24-2025 : ll bubble swap new but skip,reverse try no idea,only that is list,video easy work,
-rec copy, loop try debug but different,
+rec copy, loop try debug but different,leetcode rev, part rev - find,rev??,
