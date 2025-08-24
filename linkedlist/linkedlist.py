@@ -128,18 +128,18 @@ class LinkedList:
         if left==right:
             return head
         previous,current=None,head
-
-        while left>1 and current:
+        dummyleft=left
+        while dummyleft>1 and current:
             previous=current
             current=current.next
-            left=left-1
+            dummyleft=dummyleft-1
 
         last=previous
         newEnd=current
 
-        bet=right-left+1
+        bet=(right-left)+1
         next=current.next
-        while bet>1 and current:
+        while bet>0 and current:
             current.next=previous
             previous=current
             current=next
@@ -149,7 +149,7 @@ class LinkedList:
         if last:
             last.next=previous
         else:
-            head=previous
+            self.head=previous
 
         newEnd.next=current
 
@@ -189,7 +189,7 @@ def main():
     list.display()
     #list.reverse2(list.head)
     print(list.find(1))
-    list.reverseBetween(list.head,4,5)
+    list.reverseBetween(list.head,1,2)
     list.display()
 
 if __name__=="__main__":
