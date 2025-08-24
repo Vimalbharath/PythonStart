@@ -96,13 +96,18 @@ class LinkedList:
         prev.next=None
         self.size=self.size-1
 
-    def reverse1(self,head):
-        if not head.next:
-            return head
-        temp=head
-        ans=self.reverse1(head.next)
-        ans.next=temp
-        return head
+    def reverse1(self,node):
+        if not node.next:
+            self.tail=node
+            self.head=node
+            return
+        
+        self.reverse1(node.next)
+        self.tail.next=node
+        self.tail=node
+        self.tail.next=None
+        
+        
 
     def reverse2(self,head):
         f,s=None,None
