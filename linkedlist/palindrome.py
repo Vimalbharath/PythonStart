@@ -13,6 +13,7 @@ class Solution:
         if head.next==None: return True
         mid=self.middle(head)
         self.reversehalf(head,mid)
+        mid=self.middle(head)
         while mid and mid.next:
             if not head.val==mid.val:
                 return False
@@ -27,8 +28,8 @@ class Solution:
             s=s.next
         return s
 
-    def reversehalf(self,head,mid):
-        prev,present,next=None,head,head.next
+    def reversehalf(self,node,mid):
+        prev,present,next=None,node,node.next
         while not present==mid:
             prev=present
             present=next
@@ -46,7 +47,7 @@ class Solution:
         if last:
             last.next=prev
         else:
-            head=prev
+            self.head=prev
         newEnd.next=present
         
 # Helper function to create a linked list from a Python list
