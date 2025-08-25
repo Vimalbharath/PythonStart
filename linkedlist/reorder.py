@@ -23,9 +23,10 @@ class Solution:
            
                 temp1=node.next
                 node.next=newmid
-                newmid=newmid.next
-                node=node.next
-                node.next=temp1
+                temp2=newmid.next
+                newmid.next=temp1
+                newmid=temp2
+                node=node.next.next
             
     def middle(self,head):
         f,s=head,head

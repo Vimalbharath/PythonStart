@@ -65,4 +65,4 @@ August-24-2025 : ll bubble swap new but skip,reverse try no idea,only that is li
 rec copy, loop try debug but different,leetcode rev, part rev - find,rev??,understood question wrong, reverse part in given pos not node,even debug not helps,video not helps,dummyLeft debug half case pass,
 self.head removed
 
-August-25-2025 : palindrome,o(1) space, half reverse - mid,reverse try half case pass,1 -> 2 fail,video easy copy, no print ,reorder copy not workout,local computer crash,
+August-25-2025 : palindrome,o(1) space, half reverse - mid,reverse try half case pass,1 -> 2 fail,video easy copy, no print ,reorder copy not workout,local computer crash,notes not workout,
