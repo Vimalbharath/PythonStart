@@ -12,13 +12,13 @@ class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         if head.next==None: return True
         mid=self.middle(head)
-        self.reversehalf(head,mid)
-        mid=self.middle(head)
-        while mid and mid.next:
-            if not head.val==mid.val:
+        newmid=self.reversehalf(head,mid)
+        #mid=self.middle(head)
+        while newmid :
+            if not head.val==newmid.val:
                 return False
             head=head.next
-            mid=mid.next
+            newmid=newmid.next
         return True
     def middle(self,head):
         f,s=head,head
@@ -29,14 +29,14 @@ class Solution:
         return s
 
     def reversehalf(self,node,mid):
-        prev,present,next=None,node,node.next
-        while not present==mid:
-            prev=present
-            present=next
-            next=next.next
+        prev,present,next=None,mid,mid.next
+        # while not present==mid:
+        #     prev=present
+        #     present=next
+        #     next=next.next
 
-        last=prev
-        newEnd=present
+        # last=prev
+        # newEnd=present
 
         while present:
             present.next=prev
@@ -44,11 +44,12 @@ class Solution:
             present=next
             if next:
                 next=next.next
-        if last:
-            last.next=prev
-        else:
-            self.head=prev
-        newEnd.next=present
+        return prev
+        # if last:
+        #     last.next=prev
+        # else:
+        #     self.head=prev
+        # newEnd.next=present
         
 # Helper function to create a linked list from a Python list
 def create_linked_list(arr):
@@ -74,7 +75,7 @@ def print_linked_list(head):
 
 if __name__ == '__main__':
     # Example 1: Input: head = [1, 1, 2]
-    input_list = [1,2]
+    input_list = [1,2,3,2,1]
     head = create_linked_list(input_list)
 
     print("Input linked list:")
