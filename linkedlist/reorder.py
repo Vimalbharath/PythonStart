@@ -20,13 +20,14 @@ class Solution:
         
         temp1=None
         while newmid and node:
-           
-                temp1=node.next
-                node.next=newmid
-                temp2=newmid.next
-                newmid.next=temp1
-                newmid=temp2
-                node=node.next.next
+            temp1=node.next
+            node.next=newmid
+            node=temp1
+            temp1=newmid.next
+            newmid.next=node
+            newmid=temp1
+        if node:
+            node.next=None
             
     def middle(self,head):
         f,s=head,head
