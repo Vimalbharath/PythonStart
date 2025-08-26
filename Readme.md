@@ -66,3 +66,5 @@ rec copy, loop try debug but different,leetcode rev, part rev - find,rev??,under
 self.head removed
 
 August-25-2025 : palindrome,o(1) space, half reverse - mid,reverse try half case pass,1 -> 2 fail,video easy copy, no print ,reorder copy not workout,local computer crash,notes not workout,logic video copy,
+
+August-26-2025 : Stack try,
