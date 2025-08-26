@@ -67,4 +67,4 @@ self.head removed
 
 August-25-2025 : palindrome,o(1) space, half reverse - mid,reverse try half case pass,1 -> 2 fail,video easy copy, no print ,reorder copy not workout,local computer crash,notes not workout,logic video copy,
 
-August-26-2025 : Stack try,queue ok,video java- flexible but exception and circular skip,LC-
+August-26-2025 : Stack try,queue ok,video java- flexible but exception and circular skip,LC-two stacks,
