@@ -70,4 +70,4 @@ August-25-2025 : palindrome,o(1) space, half reverse - mid,reverse try half case
 August-26-2025 : Stack try,queue ok,video java- flexible but exception and circular skip,LC-two stacks,
 parenthesis java confuse,
 
-August-27-2025 : parenthesis,sleeping idea,python remove[0],video copy,gemini suggest,stack[len(stack)-1],inside remove, out peek,pop ans good,elif beats 100 better than kunal,par count without stack half pass,
+August-27-2025 : parenthesis,sleeping idea,python remove[0],video copy,gemini suggest,stack[len(stack)-1],inside remove, out peek,pop ans good,elif beats 100 better than kunal,par count without stack half pass,open close try fail,

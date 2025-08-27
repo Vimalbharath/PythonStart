@@ -8,5 +8,7 @@ class Solution:
             if char=='(':
                 open=open+1
             elif char==')':
-                close=close+1
-        return abs(open-close)
+                open=open-1
+                if open<0:
+                   close=close+1
+        return abs(open)+(close*close)
