@@ -40,16 +40,16 @@ class AVL:
                 node=self.rotateRight(node)
             else:
                 #left right
-                node.left=self.rotateLeft(node)
+                node.left=self.rotateLeft(node.left)
                 node=self.rotateRight(node)
-        if self.height(node.left)<self.height(node.right):
+        else:
             #right heavy
             if self.height(node.right.right)>self.height(node.right.left):
                 #right right
                 node=self.rotateLeft(node)
             else:
                 #right left
-                node.right=self.rotateRight(node)
+                node.right=self.rotateRight(node.right)
                 node=self.rotateLeft(node)
         
         return node

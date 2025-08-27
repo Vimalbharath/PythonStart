@@ -72,3 +72,4 @@ parenthesis java confuse,
 
 August-27-2025 : parenthesis,sleeping idea,python remove[0],video copy,gemini suggest,stack[len(stack)-1],inside remove, out peek,pop ans good,elif beats 100 better than kunal,par count without stack half pass,open close try fail,light video code correct but poor perf,video faang last option,double bracket,try not workout,gemini ans,Tree try,debuged and corrected,height added,height fun short,rotate,balanced??video,
 balanced checked only height,rotate right left check,rotate left heavy right heavy??,rotate initial try,
+kinda working,
