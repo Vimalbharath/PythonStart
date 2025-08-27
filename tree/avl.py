@@ -33,7 +33,25 @@ class AVL:
     def rotate(self,node):
         if self.bal(node):
             return node
-        if self.height(node.left.left)
+        if self.height(node.left)>self.height(node.right):
+            #left heavy
+            if self.height(node.left.left)>self.height(node.left.right):
+                #left left
+                node=self.rotateRight(node)
+            else:
+                #left right
+                node.left=self.rotateLeft(node)
+                node=self.rotateRight(node)
+        if self.height(node.left)<self.height(node.right):
+            #right heavy
+            if self.height(node.right.right)>self.height(node.right.left):
+                #right right
+                node=self.rotateLeft(node)
+            else:
+                #right left
+                node.right=self.rotateRight(node)
+                node=self.rotateLeft(node)
+        
         return node
     def rotateRight(self,node):
         p=node
