@@ -31,10 +31,25 @@ class AVL:
             return 0
     
     def rotate(self,node):
-        if node.height<=1:
+        if self.bal(node):
             return node
-        print ("Unbalanced",node.height,node.val)
+        if self.height(node.left.left)
         return node
+    def rotateRight(self,node):
+        p=node
+        c=p.left
+        temp=c.right
+        c.right=p
+        p.left=temp
+        return c
+    
+    def rotateLeft(self,node):
+        c=node
+        p=c.right
+        temp=p.left
+        p.left=c
+        c.left=temp
+        return p
     
     def balanced(self):
         return self.bal(self.head)
@@ -55,11 +70,11 @@ if __name__=="__main__":
     tree.insert(5)
     tree.insert(3)
     tree.insert(2)
-    # tree.insert(4)
-    # tree.insert(1)
+    tree.insert(4)
+    tree.insert(1)
     tree.insert(7)
-    # tree.insert(9)
-    # tree.insert(0)
+    tree.insert(9)
+    tree.insert(0)
     tree.preorder(tree.head)
     print(tree.balanced())
         
