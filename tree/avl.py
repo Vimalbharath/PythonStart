@@ -31,34 +31,37 @@ class AVL:
             return 0
     
     def rotate(self,node):
-        if self.bal(node):
-            return node
-        if self.height(node.left)>self.height(node.right):
+        # if self.bal(node):
+        #     return node
+        if self.height(node.left)-self.height(node.right)>1:
             #left heavy
-            if self.height(node.left.left)>self.height(node.left.right):
+            if self.height(node.left.left)-self.height(node.left.right)>0:
                 #left left
-                node=self.rotateRight(node)
+                return self.rotateRight(node)
             else:
                 #left right
                 node.left=self.rotateLeft(node.left)
-                node=self.rotateRight(node)
-        else:
+                return self.rotateRight(node)
+        if self.height(node.left)-self.height(node.right)<-1:
             #right heavy
             if self.height(node.right.right)>self.height(node.right.left):
                 #right right
-                node=self.rotateLeft(node)
+                return self.rotateLeft(node)
             else:
                 #right left
                 node.right=self.rotateRight(node.right)
-                node=self.rotateLeft(node)
-        
+                return self.rotateLeft(node)
         return node
+        
     def rotateRight(self,node):
         p=node
         c=p.left
         temp=c.right
         c.right=p
         p.left=temp
+
+        p.height=max(self.height(p.left),self.height(p.right))+1
+        c.height=max(self.height(c.left),self.height(c.right))+1
         return c
     
     def rotateLeft(self,node):
@@ -67,6 +70,9 @@ class AVL:
         temp=p.left
         p.left=c
         c.left=temp
+
+        p.height=max(self.height(p.left),self.height(p.right))+1
+        c.height=max(self.height(c.left),self.height(c.right))+1
         return p
     
     def balanced(self):
