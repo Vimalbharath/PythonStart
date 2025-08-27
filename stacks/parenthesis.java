@@ -16,21 +16,25 @@ class Solution {
             }
 
             if (!st.isEmpty() && st.peek() == '(') {
-                if (s.charAt(i) == ')')
+                if (s.charAt(i) == ')') {
                     st.pop();
-                continue;
+                    continue;
+                }
             }
             if (!st.isEmpty() && st.peek() == '{') {
-                if (s.charAt(i) == '}')
+                if (s.charAt(i) == '}') {
                     st.pop();
-                continue;
+                    continue;
+                }
             }
             if (!st.isEmpty() && st.peek() == '[') {
-                if (s.charAt(i) == ']')
+                if (s.charAt(i) == ']') {
                     st.pop();
-                continue;
+                    continue;
+
+                }
             }
-            if (st.isEmpty() && s.charAt(i) == ']' || s.charAt(i) == '}' || s.charAt(i) == ')') {
+            if (s.charAt(i) == ']' || s.charAt(i) == '}' || s.charAt(i) == ')') {
                 return false;
             }
 
