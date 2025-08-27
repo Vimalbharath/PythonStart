@@ -8,15 +8,12 @@ class Solution:
                 stack.append(char)
             else:
                 if char==']':
-                    if len(stack)==0 or not (stack[len(stack)-1])=='[':
-                        stack.remove(stack[len(stack)-1])
+                    if len(stack)==0 or not stack.pop()=='[':
                         return False
                 if char=='}':
-                    if len(stack)==0 or not (stack[len(stack)-1])=='{':
-                        stack.remove(stack[len(stack)-1])
+                    if len(stack)==0 or not stack.pop()=='{':
                         return False
                 if char==')':
-                    if len(stack)==0 or not (stack[len(stack)-1])=='(':
-                        stack.remove(stack[len(stack)-1])
+                    if len(stack)==0 or not stack.pop()=='(':
                         return False
         return len(stack)==0
