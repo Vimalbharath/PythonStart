@@ -10,10 +10,11 @@ class Solution:
                 if char==']':
                     if len(stack)==0 or not stack.pop()=='[':
                         return False
-                if char=='}':
+                elif char=='}':
                     if len(stack)==0 or not stack.pop()=='{':
                         return False
-                if char==')':
+                elif char==')':
                     if len(stack)==0 or not stack.pop()=='(':
                         return False
         return len(stack)==0
+
