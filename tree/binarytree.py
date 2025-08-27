@@ -17,17 +17,23 @@ class Binarytree:
         if not node:
             node=newnode
             return node
+        l,r=0,0
         if val<node.val:
             node.left=self.inserthelper(val,node.left)
         else:
             node.right=self.inserthelper(val,node.right)
+        if node.left:
+            l=node.left.height
+        if node.right:
+            r=node.right.height
+        node.height=max(l,r)+1
         return node
     
     def preorder(self,node):
         if not node:
             return
         self.preorder(node.left)
-        print(node.val)
+        print(node.val,node.height)
         self.preorder(node.right)
 
 if __name__=="__main__":
@@ -39,6 +45,7 @@ if __name__=="__main__":
     tree.insert(1)
     tree.insert(7)
     tree.insert(9)
+    tree.insert(0)
     tree.preorder(tree.head)
         
         
