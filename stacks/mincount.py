@@ -3,22 +3,29 @@
 class Solution:
     def minInsertions(self, s: str) -> int:
         stack=[]
-        pair=False
-        close=0
-        ans=0
-        for char in s:
-            if char =='(':
-                pair=False
-                stack.append(char)
+        insertions=0
+        i=0
+        while i<len(s):
+            if s[i] =='(':
+                stack.append(s[i])
             else:
-                if not pair:
-                    pair=True
-                else:
-                    if len(stack)>0 and stack[len(stack)-1]=='(':
+                if i+1 <len(s) and s[i + 1] == ')':
+                    if stack:
                         stack.pop()
                     else:
-                        ans=ans+1
-        return len(stack)*2
+                        insertions+=1
+                    i=i+1
+                else:
+                    insertions+=1
+                    if stack:
+                        stack.pop()
+                    else:
+                        insertions+=1
+                    i=i+1
+            i=i+1
+        insertions += len(stack) * 2
+        
+        return insertions
 
 
         
