@@ -40,8 +40,8 @@ class AVL:
         return self.bal(self.head)
     def bal(self,node):
         if not node:
-            return
-        return node.height<=1 and self.bal(node.left) and self.bal(node.right)
+            return True
+        return abs(self.height(node.left)-self.height(node.right))<=1 and self.bal(node.left) and self.bal(node.right)
 
     def preorder(self,node):
         if not node:
@@ -57,7 +57,7 @@ if __name__=="__main__":
     tree.insert(2)
     # tree.insert(4)
     # tree.insert(1)
-    # tree.insert(7)
+    tree.insert(7)
     # tree.insert(9)
     # tree.insert(0)
     tree.preorder(tree.head)
