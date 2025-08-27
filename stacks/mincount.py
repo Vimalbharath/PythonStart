@@ -3,23 +3,26 @@
 class Solution:
     def minInsertions(self, s: str) -> int:
         stack=[]
+        pair=False
         close=0
-        open=0
+        ans=0
         for char in s:
             if char =='(':
+                pair=False
                 stack.append(char)
             else:
-                if char == ')':
-                    if close==0:
-                        close=close+1
-                    elif close==1:
-                        close=close-1
-                        if len(stack)>0 :
-                            stack.pop()
-                        else:
-                            open=open+1
+                if not pair:
+                    pair=True
+                else:
+                    if len(stack)>0 and stack[len(stack)-1]=='(':
+                        stack.pop()
+                    else:
+                        ans=ans+1
+        return len(stack)*2
 
-        return len(stack)*2+open
+
+        
+
 
 if __name__=="__main__":
     sol=Solution()
