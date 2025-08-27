@@ -8,16 +8,19 @@ class Binarytree:
         
     def __init__(self):
         self.head=None
-        
-    def insert(self,val,node):
+
+    def insert(self,val):
+        self.head=self.inserthelper(val,self.head)
+
+    def inserthelper(self,val,node):
         newnode=self.Node(val)
         if not node:
             node=newnode
             return node
-        if val<self.node.val:
-            node.left=self.insert(val,node.left)
+        if val<node.val:
+            node.left=self.inserthelper(val,node.left)
         else:
-            node.right=self.insert(val,node.right)
+            node.right=self.inserthelper(val,node.right)
         return node
     
     def preorder(self,node):
@@ -29,11 +32,13 @@ class Binarytree:
 
 if __name__=="__main__":
     tree=Binarytree()
-    tree.insert(5,tree.head)
-    tree.insert(4,tree.head)
-    tree.insert(3,tree.head)
-    tree.insert(7,tree.head)
-    tree.insert(9,tree.head)
+    tree.insert(5)
+    tree.insert(3)
+    tree.insert(2)
+    tree.insert(4)
+    tree.insert(1)
+    tree.insert(7)
+    tree.insert(9)
     tree.preorder(tree.head)
         
         
