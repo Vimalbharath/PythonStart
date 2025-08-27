@@ -3,12 +3,13 @@
 class Solution:
     def minAddToMakeValid(self, s: str) -> int:
         if len(s)==0: return 0
-        open,close=0,0
+        stack=[]
         for char in s:
             if char=='(':
-                open=open+1
+                stack.append(char)
             elif char==')':
-                open=open-1
-                if open<0:
-                   close=close+1
-        return abs(open)+(close*close)
+                if len(stack)>0 and stack[len(stack)-1]=='(':
+                    stack.pop()
+                else: 
+                    stack.append(char)
+        return len(stack)
