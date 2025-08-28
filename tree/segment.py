@@ -23,7 +23,19 @@ class Segment:
         return node
 
     def update(self,index,val):
-        pass
+        self.head=self.updatehelper(index,val,self.head)
+        return self.head
+    def updatehelper(self,index,val,node):
+        if node.startInterval==index and node.endInterval==index:
+            node.data=val
+            return node
+        if index<node.startInterval or index>node.endInterval:
+            return node
+        node.left=self.updatehelper(index,val,node.left)
+        node.right=self.updatehelper(index,val,node.right)
+        node.data=node.left.data+node.right.data
+        return node
+    
     def getsum(self,left,right):
             return self.getsumhelper(left,right,self.head)
 
@@ -50,6 +62,9 @@ class Segment:
 if __name__=="__main__":
     nums=[0,1,2,3,4,5,6,7]
     seg=Segment(nums)
+    print(seg.getsum(3,7))
+    seg.preorder(seg.head)
+    seg.update(7,8)
     print(seg.getsum(3,7))
     seg.preorder(seg.head)
         
