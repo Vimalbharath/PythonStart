@@ -12,6 +12,8 @@ from typing import List, Optional
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
         queue=deque()
         node=root
         queue.append(node)
@@ -19,11 +21,12 @@ class Solution:
         while len(queue)>0:
             a=len(queue)
             levelans=[]
-            for i in range(1,a+1):
-                if queue[0].left:
-                    queue.append(queue[0].left)
-                if queue[0].right:
-                    queue.append(queue[0].right)
-                levelans.append(queue.popleft().val)
+            for i in range(a):
+                currentnode=queue.popleft()
+                if currentnode.left:
+                    queue.append(currentnode.left)
+                if currentnode.right:
+                    queue.append(currentnode.right)
+                levelans.append(currentnode.val)
             ans.append(levelans)
         return ans
