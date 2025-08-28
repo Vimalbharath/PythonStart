@@ -1,26 +1,27 @@
 class Segment:
     class Node:
-        def __init__(self,val=0):
-            self.val=val
+        def __init__(self,startInterval,endInterval):
+            self.data=0
+            self.startInterval=startInterval
+            self.endInterval=endInterval
             self.left=None
             self.right=None
 
-    def __init__(self) :
-        self.head=None
+    def __init__(self,nums) :
+        self.head=self.constructTree(nums,0,len(nums)-1)
+        pass
     
-    def insert(self,val):
+    def constructTree(self,nums,start,end):
         pass
 
-    def delete(self,val):
+    def update(self,index,val):
         pass
 
     def getsum(self,left,right):
         pass
 
 if __name__=="__main__":
-    seg=Segment()
     nums=[0,1,2,3,4,5,6]
-    for num in nums:
-        seg.insert(num)
+    seg=Segment(nums)
     print(seg.getsum(1,4))
         
