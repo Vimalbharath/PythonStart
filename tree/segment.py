@@ -28,13 +28,16 @@ class Segment:
             return self.getsumhelper(left,right,self.head)
 
     def getsumhelper(self,left,right,node):
-        if node.startInterval<=left and right<=node.endInterval:
-            if node.startInterval==left and right==node.endInterval:
-                return node.data
-            else:
-                return self.getsumhelper(left,right,node.left)+self.getsumhelper(left,right,node.right)
-        else:
+        if node.startInterval>right or node.endInterval<left:
             return 0
+        if left<=node.startInterval and node.endInterval<=right:
+            return node.data
+           
+        l=self.getsumhelper(left,right,node.left)
+        r=self.getsumhelper(left,right,node.right)
+        return l+r
+
+       
 
     def preorder(self,node):
         if not node:
@@ -45,8 +48,8 @@ class Segment:
 
 
 if __name__=="__main__":
-    nums=[0,1,2,3,4,5,6]
+    nums=[0,1,2,3,4,5,6,7]
     seg=Segment(nums)
-    print(seg.getsum(4,5))
+    print(seg.getsum(3,7))
     seg.preorder(seg.head)
         
