@@ -69,10 +69,11 @@ class AVL:
         p=c.right
         temp=p.left
         p.left=c
-        c.left=temp
+        c.right=temp
 
-        p.height=max(self.height(p.left),self.height(p.right))+1
+        
         c.height=max(self.height(c.left),self.height(c.right))+1
+        p.height=max(self.height(p.left),self.height(p.right))+1
         return p
     
     def balanced(self):
@@ -99,6 +100,9 @@ if __name__=="__main__":
     tree.insert(7)
     tree.insert(9)
     tree.insert(0)
+    tree.insert(10)
+    for i in range(11,20):
+        tree.insert(i)
     tree.preorder(tree.head)
     print(tree.balanced())
         
