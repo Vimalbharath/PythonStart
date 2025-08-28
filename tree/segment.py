@@ -9,7 +9,6 @@ class Segment:
 
     def __init__(self,nums) :
         self.head=self.constructTree(nums,0,len(nums)-1)
-        pass
     
     def constructTree(self,nums,start,end):
         if start==end:
@@ -25,9 +24,17 @@ class Segment:
 
     def update(self,index,val):
         pass
-
     def getsum(self,left,right):
-        pass
+            return self.getsumhelper(left,right,self.head)
+
+    def getsumhelper(self,left,right,node):
+        if node.startInterval<=left and right<=node.endInterval:
+            if node.startInterval==left and right==node.endInterval:
+                return node.data
+            else:
+                return self.getsumhelper(left,right,node.left)+self.getsumhelper(left,right,node.right)
+        else:
+            return 0
 
     def preorder(self,node):
         if not node:
@@ -40,6 +47,6 @@ class Segment:
 if __name__=="__main__":
     nums=[0,1,2,3,4,5,6]
     seg=Segment(nums)
-    print(seg.getsum(5,6))
+    print(seg.getsum(4,5))
     seg.preorder(seg.head)
         
