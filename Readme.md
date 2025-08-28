@@ -74,4 +74,4 @@ August-27-2025 : parenthesis,sleeping idea,python remove[0],video copy,gemini su
 balanced checked only height,rotate right left check,rotate left heavy right heavy??,rotate initial try,
 kinda working,video clone,height rotate add,
 
-August-28-2025 : left rotate bug-video, comments -height,Segment tree stage set,stage change video,
+August-28-2025 : left rotate bug-video, comments -height,Segment tree stage set,stage change video,construct tree success,
