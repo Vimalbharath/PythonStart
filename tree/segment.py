@@ -29,12 +29,16 @@ class Segment:
         if node.startInterval==index and node.endInterval==index:
             node.data=val
             return node
-        if index<node.startInterval or index>node.endInterval:
+        elif index<node.startInterval or index>node.endInterval:
             return node
-        node.left=self.updatehelper(index,val,node.left)
-        node.right=self.updatehelper(index,val,node.right)
-        node.data=node.left.data+node.right.data
-        return node
+        else:
+            mid = (node.startInterval + node.endInterval) // 2
+            if index <= mid:
+                node.left=self.updatehelper(index,val,node.left)
+            else:
+                node.right=self.updatehelper(index,val,node.right)
+            node.data=node.left.data+node.right.data
+            return node
     
     def getsum(self,left,right):
             return self.getsumhelper(left,right,self.head)

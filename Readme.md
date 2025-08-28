@@ -75,4 +75,4 @@ balanced checked only height,rotate right left check,rotate left heavy right hea
 kinda working,video clone,height rotate add,
 
 August-28-2025 : left rotate bug-video, comments -height,Segment tree stage set,stage change video,construct tree success,query works only for node interval or 0,no,full,partial overlap gemini,
-update try,
+update try,gemini optimised perf,
