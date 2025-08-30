@@ -77,4 +77,4 @@ kinda working,video clone,height rotate add,
 August-28-2025 : left rotate bug-video, comments -height,Segment tree stage set,stage change video,construct tree success,query works only for node interval or 0,no,full,partial overlap gemini,
 update try,gemini optimised perf,level order memory exceed,gemini help empty root,
 
-August-30-2025 : average good,zigzag good,
+August-30-2025 : average good,zigzag good,level order 2,
