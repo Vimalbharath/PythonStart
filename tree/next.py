@@ -18,25 +18,22 @@ class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return root
-        return self.helper(root)
-    def helper(self,node):
-        if not node:
-            return node
         leftmost=None
+        node=root
         while node:
-            if node.left:
-                if leftmost==None:
-                    leftmost=node.left
-                node.left.next=node.right
-            if node.next:
-                if node.right:
-                    node.right.next=node.next.left
-            else:
-                if node.right:
-                    node.right.next=None
-            node=node.next
-        self.helper(leftmost)
-        return node
+            leftmost=node.left
+            while node:
+                if node.left:   
+                    node.left.next=node.right
+                if node.next:
+                    if node.right:
+                        node.right.next=node.next.left
+                else:
+                    if node.right:
+                        node.right.next=None
+                node=node.next
+            node=leftmost
+        return root
 # --- Helper function to build a perfect binary tree for testing ---
 def build_tree(nodes: List[Optional[int]]) -> Optional[Node]:
     if not nodes or nodes[0] is None:
