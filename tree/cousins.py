@@ -30,19 +30,15 @@ class Solution:
 
         return level
 
-    def siblings(self,node,x,y):
-        return self.parent(node,x)==self.parent(node,y) 
-
-    def parent(self,node,x):
-        if not node:
-            return node
-        if node.left:
-            if node.left.val==x :
-                return node
-            self.parent(node.left,x)
-        if node.right:
-            if node.right.val==x:
-                return node
-            self.parent(node.right,x)
-
+    def siblings(self, node, x, y):
+        if not node or (not node.left and not node.right):
+            return False
         
+        # Check if the current node's children are the sibling pair
+        if node.left and node.right:
+            if (node.left.val == x and node.right.val == y) or \
+            (node.left.val == y and node.right.val == x):
+                return True
+                
+        # Recursively search the left and right subtrees
+        return self.siblings(node.left, x, y) or self.siblings(node.right, x, y)       
