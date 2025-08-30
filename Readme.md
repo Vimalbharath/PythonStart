@@ -78,3 +78,4 @@ August-28-2025 : left rotate bug-video, comments -height,Segment tree stage set,
 update try,gemini optimised perf,level order memory exceed,gemini help empty root,
 
 August-30-2025 : average good,zigzag good,level order 2,next confuse,tried debug in local,video correct,
+right view,
