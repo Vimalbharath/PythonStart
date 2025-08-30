@@ -24,10 +24,13 @@ class Solution:
             return node
         leftmost=node.left
         while node:
-            node.left.next=node.right
+            if node.left:
+                node.left.next=node.right
             if node.next:
-                node.right.next=node.next.left
+                if node.right:
+                    node.right.next=node.next.left
             else:
-                node.right.next=None
+                if node.right:
+                    node.right.next=None
             node=node.next
         return self.helper(leftmost)
