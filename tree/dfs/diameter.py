@@ -10,18 +10,19 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def __init__(self):
-        # Initialize an instance variable to store the diameter
-        self.diameter = 0
+    diameter=0
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        global diameter
+        diameter=0
         self.height(root)
-        return self.diameter-1
+        return diameter-1
 
     def height(self,node):
         if node==None:
             return 0
+        global diameter
         left=self.height(node.left)
         right=self.height(node.right)
         dia=right+left+1
-        self.diameter=max(dia,self.diameter)
+        diameter=max(dia,diameter)
         return max(right,left)+1
