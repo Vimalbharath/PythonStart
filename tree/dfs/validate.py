@@ -12,17 +12,11 @@ class TreeNode:
         
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        if not root:
+        return self.helper(root,None,None)
+    def helper(self,node,low,high):
+        if not node:
             return True
-        left,right=True,True
-        if root.left:
-            if root.left.val<root.val:
-                left=self.isValidBST(root.left)
-            else:
-                left=False
-        if root.right:
-            if root.right.val>root.val:
-                right=self.isValidBST(root.right)
-            else:
-                right=False
-        return left and right
+        left=False
+        if not low or low.val<node.val:
+            left=self.helper(node.left,low,node)
+        return  left
