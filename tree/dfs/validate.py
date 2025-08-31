@@ -16,7 +16,11 @@ class Solution:
     def helper(self,node,low,high):
         if not node:
             return True
-        left=False
-        if not low or low.val<node.val:
-            left=self.helper(node.left,low,node)
-        return  left
+        if low and node.val <= low.val:
+            return False
+        if high and node.val >= high.val:
+            return False
+        left=self.helper(node.left,low,node)
+        right=self.helper(node.right,node,high)
+        
+        return  left and right
