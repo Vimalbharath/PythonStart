@@ -16,8 +16,8 @@ class Heap:
     def upheap(self,index):
         if index==0:
             return
-        parent=index-1//2
-        if self.data[index]>self.data[parent]:
+        parent=(index-1)//2
+        if self.data[index]<self.data[parent]:
             self.data[index],self.data[parent]=self.data[parent],self.data[index]
             self.upheap(parent)
 
@@ -28,16 +28,17 @@ class Heap:
         return ans
     
     def downheap(self,index):
-        if index>(len(self.data)-2)//2:
+        leaf=(len(self.data)-2)//2
+        if index>leaf:
             return
         leftchild=(index*2)-1
         rightchild=(index*2)
-        if self.data[index]<self.data[leftchild]:
+        if leftchild<leaf and self.data[index]>self.data[leftchild] :
             self.data[index],self.data[leftchild]=self.data[leftchild],self.data[index]
-            self.data(leftchild)
-        if self.data[index]<self.data[rightchild]:
+            self.downheap(leftchild)
+        if rightchild<leaf and self.data[index]>self.data[rightchild]:
             self.data[index],self.data[rightchild]=self.data[rightchild],self.data[index]
-            self.data(rightchild)
+            self.downheap(rightchild)
 
 if __name__=="__main__":
     heap=Heap()
@@ -52,4 +53,4 @@ if __name__=="__main__":
     print(heap.remove())
     print(heap.remove())
     print(heap.remove())
-    print(heap.remove())
+   
