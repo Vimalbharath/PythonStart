@@ -12,7 +12,7 @@ class TreeNode:
         
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        self.ans=0
+        self.ans=-2**1000
         self.helper(root)
         return self.ans
     def helper(self,root):
@@ -21,6 +21,14 @@ class Solution:
         left=self.helper(root.left)
         right=self.helper(root.right)
         nodesum=root.val+left+right
+        leftpath=root.val+left
+        rightpath=root.val+right
+        if self.ans<leftpath:
+            self.ans=leftpath
+        if self.ans<rightpath:
+            self.ans=rightpath
+        if self.ans<root.val:
+            self.ans=root.val
         if self.ans<nodesum:
             self.ans=nodesum
         return nodesum
