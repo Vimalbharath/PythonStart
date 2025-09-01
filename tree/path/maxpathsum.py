@@ -18,17 +18,8 @@ class Solution:
     def helper(self,root):
         if not root:
             return 0
-        left=self.helper(root.left)
-        right=self.helper(root.right)
+        left=max(0,self.helper(root.left))
+        right=max(0,self.helper(root.right))
         nodesum=root.val+left+right
-        leftpath=root.val+left
-        rightpath=root.val+right
-        if self.ans<leftpath:
-            self.ans=leftpath
-        if self.ans<rightpath:
-            self.ans=rightpath
-        if self.ans<root.val:
-            self.ans=root.val
-        if self.ans<nodesum:
-            self.ans=nodesum
-        return nodesum
+        self.ans=max(self.ans,nodesum)
+        return root.val+max(left,right)
