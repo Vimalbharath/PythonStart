@@ -20,5 +20,21 @@ class Solution:
         self.helper(root.left,k,queue)
         queue.append(root.val)
         self.helper(root.right,k,queue)
-        
+
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        self.count=0
+        return self.helper(root,k).val
+        #return ans[k-1]
+
+    def helper(self,root,k):
+        if not root:
+            return None
+        left=self.helper(root.left,k)
+        if left:
+            return left
+        self.count=self.count+1
+        if self.count==k:
+            return root
+        return self.helper(root.right,k)
         
