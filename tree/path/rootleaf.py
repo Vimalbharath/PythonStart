@@ -12,17 +12,19 @@ class TreeNode:
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         self.ans=0
-        self.pathsum=0
-        self.helper(root,self.pathsum,self.ans)
+        
+        self.helper(root,0)
         return self.ans
 
-    def helper(self,root,pathsum,ans):
+    def helper(self,root,pathsum):
         if not root:
             return
 
-        if not root.left and not root.right:
-            self.ans=self.ans+self.pathsum
+        pathsum=(pathsum*10)+root.val
 
-        self.pathsum=(self.pathsum*10)+root.val
-        self.helper(root.left,self.pathsum,self.ans)
-        self.helper(root.right,self.pathsum,self.ans)
+        if not root.left and not root.right:
+            self.ans=self.ans+pathsum
+
+        
+        self.helper(root.left,pathsum)
+        self.helper(root.right,pathsum)
