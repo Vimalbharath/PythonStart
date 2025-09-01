@@ -11,20 +11,18 @@ class TreeNode:
         self.right = right
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
-        self.ans=0
         
-        self.helper(root,0)
-        return self.ans
+        
+        return self.helper(root,0)
 
     def helper(self,root,pathsum):
         if not root:
-            return
+            return 0
 
         pathsum=(pathsum*10)+root.val
 
         if not root.left and not root.right:
-            self.ans=self.ans+pathsum
+            return pathsum
 
         
-        self.helper(root.left,pathsum)
-        self.helper(root.right,pathsum)
+        return self.helper(root.left,pathsum)+self.helper(root.right,pathsum)
