@@ -23,20 +23,23 @@ class Heap:
 
     def remove(self):
         ans=self.data[0]
-        self.data[0]=self.data.pop()
-        self.downheap(0)
+        if len(self.data)==1:
+            self.data.pop()
+        else:
+            self.data[0]=self.data.pop()
+            self.downheap(0)
         return ans
     
     def downheap(self,index):
-        leaf=(len(self.data)-2)//2
-        if index>leaf:
+        notleaf=((len(self.data)-1)//2)-1
+        if index>notleaf:
             return
-        leftchild=(index*2)-1
-        rightchild=(index*2)
-        if leftchild<leaf and self.data[index]>self.data[leftchild] :
+        leftchild=(index*2)+1
+        rightchild=(index*2)+2
+        if  self.data[index]>self.data[leftchild] :
             self.data[index],self.data[leftchild]=self.data[leftchild],self.data[index]
             self.downheap(leftchild)
-        if rightchild<leaf and self.data[index]>self.data[rightchild]:
+        if  self.data[index]>self.data[rightchild]:
             self.data[index],self.data[rightchild]=self.data[rightchild],self.data[index]
             self.downheap(rightchild)
 
@@ -45,12 +48,15 @@ if __name__=="__main__":
     heap.insert(0)
     heap.insert(1)
     heap.insert(2)
-    heap.insert(3)
+    heap.insert(30)
     heap.insert(4)
-    heap.insert(5)
+    heap.insert(-9)
     print(heap)
     print(heap.remove())
     print(heap.remove())
     print(heap.remove())
+    print(heap.remove())
+    print(heap.remove())
+    print(heap)
     print(heap.remove())
    
