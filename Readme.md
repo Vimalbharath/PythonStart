@@ -85,3 +85,7 @@ August-31-2025 : symmetric video easy,diameter-height,max wrong,using constructo
 September-1-2025 : ancestor video copy,kth small extra list,extra count video use self,tree from inorder preorder,serialize,deserialize skip,path,partial work,video add easy-leaf check,totalsum right half works,pathsum self.ans perfect,video return ans time faster,max path sum-negative node fail,cases cover still fails,finally gemini coded easily,Heap given a try with upheap downheap, need to debug,corrected upheap, down index??,
 
 September-2-2025 : downheap corrected by debug,hashmap theory,gfg hld lld,langgraph-ipynb,neo4j,graph copy gfg,
+
+3,4- bfs,dfs,topo,mst,kruskal-union find,prim-heap
+
+September-5-2025 : graph matrix try,
