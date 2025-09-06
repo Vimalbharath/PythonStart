@@ -26,6 +26,28 @@ class GraphListBFS(GraphList):
        #ans.reverse()
        print(ans)
 
+    def dfs2(self):
+        vertices=self.getVertices()
+        visited=[False]*len(vertices)
+        ans=[]
+        for i in range(len(vertices)):
+            if not visited[i]:
+                self.dfshelper(vertices,visited,ans,i)
+        print(ans)
+
+    def dfshelper(self,vertices,visited,ans,pos):
+        if visited[pos]:
+            return
+        visited[pos]=True
+        ans.append(vertices[pos].name)
+        edges=vertices[pos].getEdges2()
+        for e in edges:
+            endVertex=e.v2
+            position=vertices.index(endVertex)
+            if not visited[position]:
+                self.dfshelper(vertices,visited,ans,position)
+       
+
 
 
 if __name__=="__main__":
@@ -43,3 +65,4 @@ if __name__=="__main__":
     graph.addEdge(bg,kl,400)
     print(graph)
     graph.dfs()
+    graph.dfs2()
