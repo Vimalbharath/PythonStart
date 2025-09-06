@@ -1,24 +1,25 @@
-from graphlist import GraphList
+from dfslist import GraphListBFS
 from collections import deque
 
-class GraphListBFS(GraphList):
+class GraphListBFS1(GraphListBFS):
     def topo(self):
        ans=[]
        vertices=self.vertices
        visited=set()
        for vertex in vertices:
-            if vertex not in visited:
+            if vertex.name not in visited:
                 self.topohelper(vertex,visited,ans)
+       ans.reverse()
        print(ans)
-       print ("No cycle present") if len(ans)==len(vertices) else print("Cycle present")
+       print ("No cycle present ") if len(ans)==len(vertices) else print("Cycle present ")
 
     
     def topohelper(self,vertex,visited,ans):
-        if vertex in visited:
+        if vertex.name in visited:
             return 
         visited.add(vertex.name)
         for edge in vertex.getEdges2():
-            if edge.v2 not in visited:
+            if edge.v2.name not in visited:
                 self.topohelper(edge.v2,visited,ans)
         ans.append(vertex.name)
 
@@ -27,7 +28,7 @@ class GraphListBFS(GraphList):
        
 
 if __name__=="__main__":
-    graph=GraphListBFS(True,True)
+    graph=GraphListBFS1(True,True)
     ch=graph.addVertex("Chennai")
     dl=graph.addVertex("Delhi")
     sl=graph.addVertex("SriLanka")
@@ -40,9 +41,12 @@ if __name__=="__main__":
     graph.addEdge(mb,bg,300)
     graph.addEdge(bg,kl,400)
     graph.addEdge(ch,sl,900)
+    graph.addEdge(kl,dl,6000)
     graph.addEdge(sl,sg,5000)
     graph.addEdge(bg,sg,6000)
     print(graph)
+    graph.dfs()
+    graph.dfs2()
     graph.topo()
 
     
