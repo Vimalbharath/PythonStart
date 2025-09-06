@@ -90,4 +90,4 @@ September-2-2025 : downheap corrected by debug,hashmap theory,gfg hld lld,langgr
 
 September-5-2025 : graph matrix try,graphlist try empty print,error need to fix,
 
-September-6-2025 : graph list working,module init file no use,bfs stage,
+September-6-2025 : graph list working,module init file no use,bfs stage,halfway in bfs,
