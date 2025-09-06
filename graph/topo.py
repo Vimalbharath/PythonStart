@@ -17,6 +17,28 @@ class GraphListBFS(GraphList):
         print(inDegree)
         print(outDegree)
 
+    def inout(self):
+        # Using dictionaries for O(1) lookups
+        in_degrees = {}
+        out_degrees = {}
+
+        # Initialize degrees and calculate out-degrees in a single pass
+        for vertex in self.getVertices():
+            in_degrees[vertex.name] = 0
+            # Use the correct getEdges() method
+            out_degrees[vertex.name] = len(vertex.getEdges2())
+
+        # Calculate in-degrees by iterating through all edges
+        for vertex in self.getVertices():
+            
+            for edge in vertex.getEdges2():
+                # Correctly access the destination vertex
+                next_vertex = edge.v2
+                in_degrees[next_vertex.name] += 1
+        
+        print("In-degrees:", in_degrees)
+        print("Out-degrees:", out_degrees)
+
 if __name__=="__main__":
     graph=GraphListBFS(True,True)
     ch=graph.addVertex("Chennai")
@@ -35,4 +57,5 @@ if __name__=="__main__":
     graph.addEdge(bg,sg,6000)
     print(graph)
     graph.topo()
+    graph.inout()
     
