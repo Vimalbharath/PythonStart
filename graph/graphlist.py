@@ -50,6 +50,8 @@ class GraphList:
         return self.vertices
     
     def addEdge(self,v1,v2,w=0):
+        if not self.weighted:
+            w=0
         v1.addEdge(v2,w)
         if not self.directed:
             v2.addEdge(v1,w)
