@@ -89,3 +89,5 @@ September-2-2025 : downheap corrected by debug,hashmap theory,gfg hld lld,langgr
 3,4- bfs,dfs,topo,mst,kruskal-union find,prim-heap
 
 September-5-2025 : graph matrix try,graphlist try empty print,error need to fix,
+
+September-6-2025 : graph list working,

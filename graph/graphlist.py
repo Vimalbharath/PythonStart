@@ -9,21 +9,24 @@ class Vertex:
         return ans
     
     def getEdges(self):
-        return self.edges
+        ans=''
+        for i in self.edges:
+            ans=ans+str(i)
+        return ans
     
     def addEdge(self,v2,w=0):
-        self.edges.append(v2)
+        self.edges.append(Edge(self,v2,w))
     
-# class Edge:
-#     def __init__(self,v1,v2,w=0):
-#         self.v1=v1
-#         self.v2=v2
-#         self.w=w
+class Edge:
+    def __init__(self,v1,v2,w=0):
+        self.v1=v1
+        self.v2=v2
+        self.w=w
 
-#     def __str__(self):
-#         ans=''
-#         ans=ans+ self.v1+self.v2+self.w
-#         return ans
+    def __str__(self):
+        ans=''
+        ans=ans+ "Edge :"+ str(self.v1.name)+"-"+str(self.v2.name)+":"+str(self.w)+". "
+        return ans
     
 class GraphList:
     def __init__(self,directed,weighted):
@@ -34,7 +37,8 @@ class GraphList:
     def __str__(self):
         ans=''
         for i in self.vertices:
-            ans=ans+ "---"+i.name
+            ans=ans+ "---"+i.name+"-->"+i.getEdges()
+            ans=ans+'\n'
         return ans
     
     def addVertex(self,name):
@@ -51,11 +55,11 @@ class GraphList:
             v2.addEdge(v1,w)
 
 if __name__=="__main__":
-    graph=GraphList(True,True)
+    graph=GraphList(True,False)
     ch=graph.addVertex("Chennai")
     dl=graph.addVertex("Delhi")
     mb=graph.addVertex("Mumbai")
     graph.addEdge(ch,dl,800)
     graph.addEdge(ch,mb,400)
     print(graph)
-    print(ch.getEdges())
+    #print(ch.getEdges())
