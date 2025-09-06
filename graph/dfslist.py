@@ -28,24 +28,23 @@ class GraphListBFS(GraphList):
 
     def dfs2(self):
         vertices=self.getVertices()
-        visited=[False]*len(vertices)
+        visited=set()
         ans=[]
-        for i in range(len(vertices)):
-            if not visited[i]:
-                self.dfshelper(vertices,visited,ans,i)
+        for vertex in vertices:
+            if vertex.name not in visited:
+                self.dfshelper(vertex,visited,ans)
         print(ans)
 
-    def dfshelper(self,vertices,visited,ans,pos):
-        if visited[pos]:
+    def dfshelper(self,vertex,visited,ans):
+        if vertex.name in visited:
             return
-        visited[pos]=True
-        ans.append(vertices[pos].name)
-        edges=vertices[pos].getEdges2()
+        visited.add(vertex.name)
+        ans.append(vertex.name)
+        edges=vertex.getEdges2()
         for e in edges:
             endVertex=e.v2
-            position=vertices.index(endVertex)
-            if not visited[position]:
-                self.dfshelper(vertices,visited,ans,position)
+            if endVertex.name not in visited:
+                self.dfshelper(endVertex,visited,ans)
        
 
 
