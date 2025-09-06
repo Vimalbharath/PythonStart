@@ -5,9 +5,16 @@ class GraphListBFS(GraphList):
     def topo(self):
         vertices=self.vertices
         outDegree=[0]*len(self.vertices)
+        inDegree=[0]*len(self.vertices)
         for i in range(len(vertices)):
             current=vertices[i]
             outDegree[i]=len(current.getEdges2())
+        for vertex in vertices:
+            edges=vertex.getEdges2()
+            for e in edges:
+                nextVertex=e.v2
+                inDegree[vertices.index(nextVertex)]=inDegree[vertices.index(nextVertex)]+1
+        print(inDegree)
         print(outDegree)
 
 if __name__=="__main__":
@@ -25,6 +32,7 @@ if __name__=="__main__":
     graph.addEdge(bg,kl,400)
     graph.addEdge(ch,sl,900)
     graph.addEdge(sl,sg,5000)
+    graph.addEdge(bg,sg,6000)
     print(graph)
     graph.topo()
     
