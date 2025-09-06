@@ -11,7 +11,8 @@ class GraphListBFS(GraphList):
                 stack=deque([vertices[i]])
                 visited[i]=True
             while stack:
-                    current=stack[-1]
+                    current=stack.pop()
+                    ans.append(current.name)
                     edges=current.getEdges2()
                     for e in edges:
                         endVertex=e.v2
@@ -19,10 +20,10 @@ class GraphListBFS(GraphList):
                         if not visited[pos]:
                             visited[pos]=True
                             stack.append(endVertex)
-                            break
-                    else:
-                        ans.append(stack.pop().name)
-       ans.reverse()
+                    #         break
+                    # else:
+                    #     ans.append(stack.pop().name)
+       #ans.reverse()
        print(ans)
 
 
