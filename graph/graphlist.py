@@ -14,6 +14,9 @@ class Vertex:
             ans=ans+str(i)
         return ans
     
+    def getEdges2(self):
+        return self.edges
+    
     def addEdge(self,v2,w=0):
         self.edges.append(Edge(self,v2,w))
     
