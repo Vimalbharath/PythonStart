@@ -6,19 +6,22 @@ class GraphListBFS(GraphList):
        ans=[]
        vertices=self.getVertices()
        visited=[False]*len(vertices)
-       stack=deque([vertices[0]])
-       visited[0]=True
-       while stack:
-            current=stack[-1]
-            edges=current.getEdges2()
-            for e in edges:
-                endVertex=e.v2
-                pos=vertices.index(endVertex)
-                if not visited[pos]:
-                    visited[pos]=True
-                    stack.append(endVertex)
-                    break
-            ans.append(stack.pop().name)
+       for i in range(len(vertices)):
+            if not visited[i]:
+                stack=deque([vertices[i]])
+                visited[i]=True
+            while stack:
+                    current=stack[-1]
+                    edges=current.getEdges2()
+                    for e in edges:
+                        endVertex=e.v2
+                        pos=vertices.index(endVertex)
+                        if not visited[pos]:
+                            visited[pos]=True
+                            stack.append(endVertex)
+                            break
+                    else:
+                        ans.append(stack.pop().name)
        ans.reverse()
        print(ans)
 
