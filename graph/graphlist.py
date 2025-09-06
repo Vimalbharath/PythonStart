@@ -44,6 +44,13 @@ class GraphList:
             ans=ans+'\n'
         return ans
     
+    def getAllEdges(self):
+        ans=[]
+        for vertex in self.vertices:
+            ans.extend(vertex.getEdges2())
+        return ans
+
+    
     def addVertex(self,name):
         newVertex=Vertex(name)
         self.vertices.append(newVertex)

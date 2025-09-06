@@ -91,4 +91,4 @@ September-2-2025 : downheap corrected by debug,hashmap theory,gfg hld lld,langgr
 September-5-2025 : graph matrix try,graphlist try empty print,error need to fix,
 
 September-6-2025 : graph list working,module init file no use,bfs stage,halfway in bfs,BFS working fine,
-dfs stack try break visited-fix,for else works-dfs stack,corrected dfs approach,dfs using rec,used set instead of index,topo outdegree,indegree,efficient using dict,topo try with dfs cycle??,sorting but can't detect cycle,topo khan - fail,not used queue, topodfs cycle extra rec st set skip.
+dfs stack try break visited-fix,for else works-dfs stack,corrected dfs approach,dfs using rec,used set instead of index,topo outdegree,indegree,efficient using dict,topo try with dfs cycle??,sorting but can't detect cycle,topo khan - fail,not used queue, topodfs cycle extra rec st set skip.//Kruskal- all edges double,
