@@ -1,6 +1,7 @@
 class DSU:
     def __init__(self,n):
         self.parent=[0]*n
+        self.rank=[0]*n
 
     def make_set(self,x):
         self.parent[x]=x
@@ -15,7 +16,12 @@ class DSU:
         yy=self.find(y)
         if xx==yy:
             return
-        self.parent[xx]=yy
+        if self.rank[xx]>self.rank[yy]:
+            self.parent[yy]=xx
+        else:
+            self.parent[xx]=yy
+            if self.rank[xx]==self.rank[yy]:
+                self.rank[yy]+=1
 
 if __name__=="__main__":
     dsu=DSU(6)
