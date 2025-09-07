@@ -1,3 +1,5 @@
+from unionfind import DSU
+
 class Vertex:
     def __init__(self, name):
         self.name = name
@@ -85,6 +87,44 @@ class GraphList1(GraphList):
         edges = self.get_all_edges()
         print([str(e) for e in edges])
 
+    def kruskal(self):
+        # 1. Map vertices to integer indices
+        vertices = self.get_vertices()
+        vertex_to_index = {vertex.name: i for i, vertex in enumerate(vertices)}
+        num_vertices = len(vertices)
+        
+        # 2. Initialize DSU with the correct number of elements
+        dsu = DSU(num_vertices)
+        
+        # 3. Get all unique edges and sort them by weight
+        edges = sorted(self.get_unique_edges(), key=lambda edge: edge.w)
+        
+        mst = []
+        mst_weight = 0
+        
+        # 4. Iterate through sorted edges and build the MST
+        for edge in edges:
+            u_name, v_name = edge.v1.name, edge.v2.name
+            u_index = vertex_to_index[u_name]
+            v_index = vertex_to_index[v_name]
+            
+            # Check if adding the edge creates a cycle using the integer indices
+            if dsu.find(u_index) != dsu.find(v_index):
+                # If not, add the edge to the MST and union the sets
+                dsu.union(u_index, v_index)
+                mst.append(edge)
+                mst_weight += edge.w
+        
+        # Check if the MST is a spanning tree for the entire graph
+        if len(mst) < num_vertices - 1:
+            print("The graph is not connected.")
+        
+        print("Minimum Spanning Tree (MST) Edges:")
+        for edge in mst:
+            print(edge)
+            
+        print(f"\nTotal MST Weight: {mst_weight}")
+
 if __name__ == "__main__":
     graph = GraphList1(False, True)
     a = graph.add_vertex("a")
@@ -113,9 +153,10 @@ if __name__ == "__main__":
     graph.add_edge(i, g, 6)
     
     print(graph)
-    graph.a()
-    print("All edges (including duplicates):")
-    print([str(e) for e in graph.get_all_edges()])
+    # graph.a()
+    # print("All edges (including duplicates):")
+    # print([str(e) for e in graph.get_all_edges()])
 
     print("\nUnique edges:")
     print([str(e) for e in graph.get_unique_edges()])
+    graph.kruskal()

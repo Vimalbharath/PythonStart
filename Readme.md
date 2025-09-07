@@ -94,4 +94,4 @@ September-6-2025 : graph list working,module init file no use,bfs stage,halfway 
 dfs stack try break visited-fix,for else works-dfs stack,corrected dfs approach,dfs using rec,used set instead of index,topo outdegree,indegree,efficient using dict,topo try with dfs cycle??,sorting but can't detect cycle,topo khan - fail,not used queue, topodfs cycle extra rec st set skip.//Kruskal- all edges double,unique edges gemini,w3schools similar,room key fail
 
 September-7-2025 : Union Find- no idea- parent array,tried after video,working inefficient detect cycle,
-find return miss,path compression,union by rank robust,gemini video,
+find return miss,path compression,union by rank robust,gemini video,kruskal-vertex to index gemini copy,

@@ -1,6 +1,6 @@
 class DSU:
     def __init__(self,n):
-        self.parent=[0]*n
+        self.parent = list(range(n))
         self.rank=[0]*n
 
     def make_set(self,x):
