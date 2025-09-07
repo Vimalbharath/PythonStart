@@ -7,7 +7,7 @@ class DSU:
 
     def find(self,x):
         if not self.parent[x]==x:
-            self.find(self.parent[x])
+            return self.find(self.parent[x])
         return self.parent[x]
     
     def union(self,x,y):
