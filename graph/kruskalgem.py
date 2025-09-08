@@ -1,4 +1,5 @@
 from unionfind import DSU
+import math
 
 class Vertex:
     def __init__(self, name):
@@ -125,6 +126,72 @@ class GraphList1(GraphList):
             
         print(f"\nTotal MST Weight: {mst_weight}")
 
+    def to_adjacency_matrix(self):
+        # 1. Get a sorted list of vertex names to create a consistent mapping
+        vertex_names = sorted(self.vertices.keys())
+        vertex_to_index = {name: i for i, name in enumerate(vertex_names)}
+        num_vertices = len(vertex_names)
+        
+        # 2. Initialize the adjacency matrix with a default value
+        # Use infinity for weighted graphs to represent no edge, as 0 could be a valid weight.
+        if self.weighted:
+            # Initialize with inf and 0 on the diagonal for self-loops (if applicable)
+            matrix = [[math.inf] * num_vertices for _ in range(num_vertices)]
+            for i in range(num_vertices):
+                matrix[i][i] = 0
+        else:
+            # Use 0 for unweighted graphs
+            matrix = [[0] * num_vertices for _ in range(num_vertices)]
+        
+        # 3. Populate the matrix from the adjacency list
+        for vertex_name, vertex_obj in self.vertices.items():
+            u_index = vertex_to_index[vertex_name]
+            for edge in vertex_obj.get_edges():
+                v_name = edge.v2.name
+                v_index = vertex_to_index[v_name]
+                weight = edge.w if self.weighted else 1
+                
+                # Update the matrix with the edge's weight (or 1 for unweighted)
+                matrix[u_index][v_index] = weight
+        
+        # Print the mapping for clarity
+        print("Vertex Name to Index Mapping:", vertex_to_index)
+        
+        # Print the resulting adjacency matrix
+        print("Adjacency Matrix:")
+        for row in matrix:
+            print(row)
+        
+        return matrix
+
+    def increase_matrix_size(self,matrix):
+        """
+        Copies a matrix and increases its dimensions by one row and one column.
+        
+        Args:
+            matrix (list of list): The original 2D list (matrix).
+
+        Returns:
+            list of list: A new matrix with one more row and one more column.
+        """
+        if not matrix or not matrix[0]:
+            print("Error: The input matrix is empty.")
+            return [[]]
+        
+        rows = len(matrix)
+        cols = len(matrix[0])
+        
+        # Create the new, larger matrix filled with a default value (e.g., 0)
+        # The new dimensions are (rows + 1) x (cols + 1)
+        new_matrix = [[math.inf] * (cols + 1) for _ in range(rows + 1)]
+        
+        # Copy the elements from the original matrix into the new one
+        for i in range(rows):
+            for j in range(cols):
+                new_matrix[i][j] = matrix[i][j]
+                
+        return new_matrix
+
 if __name__ == "__main__":
     graph = GraphList1(False, True)
     a = graph.add_vertex("a")
@@ -160,3 +227,8 @@ if __name__ == "__main__":
     print("\nUnique edges:")
     print([str(e) for e in graph.get_unique_edges()])
     graph.kruskal()
+    mat=graph.to_adjacency_matrix()
+    m2=graph.increase_matrix_size([[1]])
+    print("\nEnlarged Matrix:")
+    for row in m2:
+        print(row)
