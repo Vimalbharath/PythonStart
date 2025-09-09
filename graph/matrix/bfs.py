@@ -11,11 +11,11 @@ class GraphBFS(GraphMatrix):
         while queue:
             u=queue.popleft()
             ans.append(u)
-            edges=self.matrix[u]
-            for v in edges:
-                if not v == math.inf and not v and not visited[v]:
-                    visited[v]=1
-                    queue.push(v)
+            v=self.matrix[u]
+            for i in range(len(v)):
+                if not v[i] == math.inf and not v[i]==0 and not visited[i]:
+                    visited[i]=1
+                    queue.append(i)
         print(ans) 
     
 if __name__=="__main__":
