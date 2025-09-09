@@ -82,6 +82,22 @@ class GraphMatrix:
                     print(f"{value:>4}", end="")
             print()
 
+    def getOutdegree(self):
+        ans=[0]* len(self.matrix)
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[i])):
+                if not self.matrix[i][j]==0 and not self.matrix[i][j]==math.inf:
+                    ans[i]+=1
+        return ans
+
+    def getIndegree(self):
+        ans=[0]* len(self.matrix)
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[i])):
+                if not self.matrix[i][j]==0 and not self.matrix[i][j]==math.inf:
+                    ans[j]+=1
+        return ans
+
 if __name__ == "__main__":
     # Example 1: Undirected, Weighted Graph (like a road network)
     print("--- Undirected, Weighted Graph ---")
