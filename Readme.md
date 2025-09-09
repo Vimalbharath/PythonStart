@@ -98,4 +98,4 @@ find return miss,path compression,union by rank robust,gemini video,kruskal-vert
 
 September-8-2025 : matrix try,gemini like list,
 
-September-9-2025 : bfs try,ans ok but in numbers,perfect bfs,dfs stack and rec success,
+September-9-2025 : bfs try,ans ok but in numbers,perfect bfs,dfs stack and rec success,topo easy but cycle cofuses skip,
