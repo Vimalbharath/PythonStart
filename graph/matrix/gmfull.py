@@ -18,6 +18,12 @@ class GraphMatrix:
         self.directed = directed
         self.weighted = weighted
 
+    def get_key_from_value( self,value):
+        for key, val in self.vertex_to_index.items():
+            if val == value:
+                return key
+        return None
+    
     def addVertex(self, name):
         if name in self.vertex_to_index:
             return self.vertices[self.vertex_to_index[name]]

@@ -6,16 +6,19 @@ class GraphBFS(GraphMatrix):
     def bfs(self):
         ans=[]
         visited=[0]*len(self.vertices)
-        queue=deque([0])
-        visited[0]=1
-        while queue:
-            u=queue.popleft()
-            ans.append(u)
-            v=self.matrix[u]
-            for i in range(len(v)):
-                if not v[i] == math.inf and not v[i]==0 and not visited[i]:
-                    visited[i]=1
-                    queue.append(i)
+        for n in range(len(self.vertices)):
+            if visited[n]:
+                continue
+            queue=deque([n])
+            visited[n]=1
+            while queue:
+                u=queue.popleft()
+                ans.append(self.vertices[u].name)
+                v=self.matrix[u]
+                for i in range(len(v)):
+                    if not v[i] == math.inf and not v[i]==0 and not visited[i]:
+                        visited[i]=1
+                        queue.append(i)
         print(ans) 
     
 if __name__=="__main__":
