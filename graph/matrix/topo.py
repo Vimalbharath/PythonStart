@@ -5,21 +5,37 @@ import math
 class GraphBFS(GraphMatrix):
     def topo(self):
         ans=[]
-        
+        recursion_stack = [False] * len(self.vertices)
+        has_cycle = False
         visited=[0]*len(self.vertices)
         for n in range(len(self.vertices)):
             if not visited[n]:
-                self.topohelper(n,visited,ans)
-        ans.reverse()
-        print(ans) 
+                if self.topohelper(n, visited, recursion_stack, ans):
+                    has_cycle = True
+                    break
 
-    def topohelper(self,u,visited,ans):
+        if has_cycle:
+            print("Error: The graph contains a cycle. Topological sort is not possible.")
+        else:
+            ans.reverse()
+            print("Topological Sort Order:", ans)
+
+    def topohelper(self,u,visited,recursion_stack,ans):
+        
         visited[u]=1
+        recursion_stack[u] = True 
         for i in range(len(self.vertices)):
             # Check for a valid edge (not infinity and not a self-loop)
-            if self.matrix[u][i] != math.inf and self.matrix[u][i] != 0 and not visited[i]:
-                self.topohelper(i, visited, ans)
+            if self.matrix[u][i] != math.inf and self.matrix[u][i] != 0 :
+                if not visited[i]:
+                   if self.topohelper(i, visited, recursion_stack, ans):
+                        return True
+                elif recursion_stack[i]:
+                    return True
+        recursion_stack[u] = False 
         ans.append(self.vertices[u].name)
+        return False
+    
 if __name__=="__main__":
     graph=GraphBFS(True,False)
     ch=graph.addVertex("Chennai")
