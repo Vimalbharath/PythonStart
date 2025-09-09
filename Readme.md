@@ -97,3 +97,5 @@ September-7-2025 : Union Find- no idea- parent array,tried after video,working i
 find return miss,path compression,union by rank robust,gemini video,kruskal-vertex to index gemini copy,uses enumerate, sorted and dict,Eclipse- Prims, Gemini video explain-mst,parent,key,heap delete, using vertex confused,
 
 September-8-2025 : matrix try,gemini like list,
+
+September-9-2025 : bfs try,

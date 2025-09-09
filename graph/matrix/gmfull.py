@@ -18,7 +18,7 @@ class GraphMatrix:
         self.directed = directed
         self.weighted = weighted
 
-    def add_vertex(self, name):
+    def addVertex(self, name):
         if name in self.vertex_to_index:
             return self.vertices[self.vertex_to_index[name]]
         
@@ -44,7 +44,7 @@ class GraphMatrix:
         self.matrix = new_matrix
         return new_vertex
 
-    def add_edge(self, v1, v2, weight=1):
+    def addEdge(self, v1, v2, weight=1):
         if not self.weighted:
             weight = 1
             
@@ -80,9 +80,9 @@ if __name__ == "__main__":
     # Example 1: Undirected, Weighted Graph (like a road network)
     print("--- Undirected, Weighted Graph ---")
     graph1 = GraphMatrix(directed=False, weighted=True)
-    a, b, c = graph1.add_vertex("a"), graph1.add_vertex("b"), graph1.add_vertex("c")
-    graph1.add_edge(a, b, 10)
-    graph1.add_edge(b, c, 5)
+    a, b, c = graph1.addVertex("a"), graph1.addVertex("b"), graph1.addVertex("c")
+    graph1.addEdge(a, b, 10)
+    graph1.addEdge(b, c, 5)
     graph1.print_matrix()
     
     print("\n" + "="*35 + "\n")
@@ -90,34 +90,34 @@ if __name__ == "__main__":
     # Example 2: Directed, Unweighted Graph (like a website's links)
     print("--- Directed, Unweighted Graph ---")
     graph2 = GraphMatrix(directed=True, weighted=False)
-    a, b, c = graph2.add_vertex("a"), graph2.add_vertex("b"), graph2.add_vertex("c")
-    graph2.add_edge(a, b) # Default weight of 1 is used
-    graph2.add_edge(b, c)
+    a, b, c = graph2.addVertex("a"), graph2.addVertex("b"), graph2.addVertex("c")
+    graph2.addEdge(a, b) # Default weight of 1 is used
+    graph2.addEdge(b, c)
     graph2.print_matrix()
 
     graph = GraphMatrix(False, True)
-    a = graph.add_vertex("a")
-    b = graph.add_vertex("b")
-    c = graph.add_vertex("c")
-    d = graph.add_vertex("d")
-    e = graph.add_vertex("e")
-    f = graph.add_vertex("f")
-    g = graph.add_vertex("g")
-    h = graph.add_vertex("h")
-    i = graph.add_vertex("i")
+    a = graph.addVertex("a")
+    b = graph.addVertex("b")
+    c = graph.addVertex("c")
+    d = graph.addVertex("d")
+    e = graph.addVertex("e")
+    f = graph.addVertex("f")
+    g = graph.addVertex("g")
+    h = graph.addVertex("h")
+    i = graph.addVertex("i")
     
-    graph.add_edge(a, b, 4)
-    graph.add_edge(b, c, 8)
-    graph.add_edge(c, d, 7)
-    graph.add_edge(d, e, 9)
-    graph.add_edge(e, f, 10)
-    graph.add_edge(f, g, 2)
-    graph.add_edge(g, h, 1)
-    graph.add_edge(h, i, 7)
-    graph.add_edge(h, a, 8)
-    graph.add_edge(b, h, 11)
-    graph.add_edge(d, f, 14)
-    graph.add_edge(c, f, 4)
-    graph.add_edge(c, i, 2)
-    graph.add_edge(i, g, 6)
+    graph.addEdge(a, b, 4)
+    graph.addEdge(b, c, 8)
+    graph.addEdge(c, d, 7)
+    graph.addEdge(d, e, 9)
+    graph.addEdge(e, f, 10)
+    graph.addEdge(f, g, 2)
+    graph.addEdge(g, h, 1)
+    graph.addEdge(h, i, 7)
+    graph.addEdge(h, a, 8)
+    graph.addEdge(b, h, 11)
+    graph.addEdge(d, f, 14)
+    graph.addEdge(c, f, 4)
+    graph.addEdge(c, i, 2)
+    graph.addEdge(i, g, 6)
     graph.print_matrix()
