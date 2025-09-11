@@ -9,10 +9,22 @@ class Vertex:
         
     def __format__(self, format_spec):
         return f"{self.name:{format_spec}}"
+    
+class Edge:
+    def __init__(self,u,v,w):
+        self.u=u
+        self.v=v
+        self.w=w
+
+    def __str__(self):
+        ans=""
+        ans=ans+str(self.u.name)+"->"+str(self.v.name)+": "+str(self.w)
+        return ans
 
 class GraphMatrix:
     def __init__(self, directed=False, weighted=False):
         self.vertices = []
+        self.edges=[]
         self.vertex_to_index = {}
         self.matrix = []
         self.directed = directed
@@ -62,6 +74,7 @@ class GraphMatrix:
         v2_index = self.vertex_to_index[v2.name]
         
         self.matrix[v1_index][v2_index] = weight
+        self.edges.append(Edge(v1,v2,weight))
         if not self.directed:
             self.matrix[v2_index][v1_index] = weight
 

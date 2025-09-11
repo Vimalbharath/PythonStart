@@ -99,3 +99,7 @@ find return miss,path compression,union by rank robust,gemini video,kruskal-vert
 September-8-2025 : matrix try,gemini like list,
 
 September-9-2025 : bfs try,ans ok but in numbers,perfect bfs,dfs stack and rec success,topo easy but cycle cofuses skip,skipped in list too???,khan list gemini fail,indegree out degree good,gemini easy khan for matrix,import confuse,
+
+September-10-2025 : env var - PYTHON
+
+September-11-2025 : kruskal sort edges,
