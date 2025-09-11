@@ -7,10 +7,27 @@ import math
 
 class GraphBFS(GraphMatrix):
     def kruskal(self):
+        mst_weight=0
+        mstset=set()
         alledges=self.edges
         asec=sorted(alledges,key=lambda edge: edge.w)
+        # for edge in asec:
+        #     print(edge)
+        dsu=DSU(len(self.vertices))
+        vertex_to_index = {vertex.name: i for i, vertex in enumerate(self.vertices)}
         for edge in asec:
+            #print(vertex_to_index[edge.u.name],vertex_to_index[edge.v.name])
+            pu=dsu.find(vertex_to_index[edge.u.name])
+            pv=dsu.find(vertex_to_index[edge.v.name])
+            if pu!=pv:
+                dsu.union(vertex_to_index[edge.u.name],vertex_to_index[edge.v.name])
+                mst_weight+=edge.w
+                mstset.add(edge)
+
+        print(mst_weight)
+        for edge in mstset:
             print(edge)
+            
 
 if __name__=="__main__":
     graph=GraphBFS(False,True)
