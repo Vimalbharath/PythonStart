@@ -14,6 +14,7 @@ class GraphBFS(GraphMatrix):
         visitedarray=[0]*n
         parent=[None]*n
         vertex_to_index = {vertex.name: i for i, vertex in enumerate(self.vertices)}
+        index_to_vertex = {i: vertex.name for i, vertex in enumerate(self.vertices)} # Add this
         u=(vertex_to_index[start_vertex])
 
         weightarray[u]=0
@@ -26,7 +27,7 @@ class GraphBFS(GraphMatrix):
             visitedarray[u]=1
             mst_weight+=weight
             if parent[u]!=None:
-                mstset.append((parent[u],u,weight))
+                mstset.append((index_to_vertex[parent[u]],index_to_vertex[u],weight))
             for i in range(len(self.vertices)):
                 v=self.matrix[u][i]
                 if visitedarray[i]!=1 and v<weightarray[i]:
