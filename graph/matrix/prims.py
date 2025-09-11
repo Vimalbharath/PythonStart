@@ -8,20 +8,31 @@ class GraphBFS(GraphMatrix):
     def prims(self,start_vertex):
         n=len(self.vertices)
         mst_weight=0
-        queue=heapq((a,b),key=b)
-        mstset=set()
+        mstset=[]
+
         weightarray=[math.inf]*n
         visitedarray=[0]*n
-        parent=[0]*n
+        parent=[None]*n
         vertex_to_index = {vertex.name: i for i, vertex in enumerate(self.vertices)}
         u=(vertex_to_index[start_vertex])
-        for i in range(len(self.vertices)):
-            v=self.matrix[u][i]
-            if v!=math.inf and v!=0 and v<weightarray[i]:
-                weightarray[i]=v
-                queue.push((i,weightarray[i]))
-        while queue:
-            u=queue.pop().b
+
+        weightarray[u]=0
+        minheap=[(0,u)]
+
+        while minheap:
+            weight,u=heapq.heappop(minheap)
+            if visitedarray[u]:
+                continue
+            visitedarray[u]=1
+            mst_weight+=weight
+            if parent[u]!=None:
+                mstset.append((parent[u],u,weight))
+            for i in range(len(self.vertices)):
+                v=self.matrix[u][i]
+                if visitedarray[i]!=1 and v<weightarray[i]:
+                    weightarray[i]=v
+                    parent[i]=u
+                    heapq.heappush(minheap,(weightarray[i],i))
        
 
         print(mst_weight)
@@ -56,4 +67,4 @@ if __name__=="__main__":
     graph.addEdge(c, i, 2)
     graph.addEdge(i, g, 6)
     graph.print_matrix()   
-    graph.prims("a")
+    graph.prims("i")
