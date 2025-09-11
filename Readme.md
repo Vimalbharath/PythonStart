@@ -102,4 +102,4 @@ September-9-2025 : bfs try,ans ok but in numbers,perfect bfs,dfs stack and rec s
 
 September-10-2025 : env var - PYTHON
 
-September-11-2025 : kruskal sort edges,implemented own,
+September-11-2025 : kruskal sort edges,implemented own,prims try-start neighbour heap queue weight,
