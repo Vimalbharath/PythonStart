@@ -17,6 +17,8 @@ class GraphBFS(GraphMatrix):
         minheap=[(distance[s],s)]
         while minheap:
             weight,u=heapq.heappop(minheap)
+            if weight > distance[u]:
+                continue
             for i in range(n):
                 if self.matrix[u][i]!=math.inf and self.matrix[u][i]!=0:
                     l=self.matrix[u][i]
