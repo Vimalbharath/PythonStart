@@ -80,5 +80,15 @@ if __name__=="__main__":
     graph.addEdge(sl,sg,9000)  
     graph.addEdge(bg,sg,9000)    
 
-    graph.print_matrix()   
-    graph.dijstra("Mumbai")
+    # graph.print_matrix()   
+    # graph.dijstra("Mumbai")
+
+    graph2=GraphBFS(True,True)    
+    a=graph2.addVertex("a")
+    b=graph2.addVertex("b")
+    c=graph2.addVertex("c")
+    graph2.addEdge(a,b,1)
+    graph2.addEdge(a,c,3)
+    graph2.addEdge(c,b,-3)
+    graph2.print_matrix()
+    graph2.dijstra("a")

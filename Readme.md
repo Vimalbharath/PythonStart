@@ -104,4 +104,4 @@ September-10-2025 : env var - PYTHON
 
 September-11-2025 : kruskal sort edges,implemented own,prims try-start neighbour heap queue weight,copy from list working,vertex to index,
 
-September-12-2025 : Dijstra try half,matrix implemented heap visited no use,path print last miss,using loop print path, modified dijstra for list,
+September-12-2025 : Dijstra try half,matrix implemented heap visited no use,path print last miss,using loop print path, modified dijstra for list,works for negative,
