@@ -8,7 +8,8 @@ class GraphBFS(GraphMatrix):
         vertices=self.vertices
         n=len(vertices)
         index=self.vertex_to_index
-
+        parent=[None]*n
+        index_to_vertex = {i: vertex.name for i, vertex in enumerate(self.vertices)} # Add this
         distance=[math.inf]*n
         #visited=[False]*n
         s=index[source_vertex_name]
@@ -20,9 +21,21 @@ class GraphBFS(GraphMatrix):
                 if self.matrix[u][i]!=math.inf and self.matrix[u][i]!=0:
                     l=self.matrix[u][i]
                     if l+weight<distance[i]:
+                        parent[i]=u
                         distance[i]=min(distance[i],l+weight)
                         heapq.heappush(minheap,(distance[i],i))
         print(distance)
+        print(parent)
+        for i in range(n):
+            print(self.path(parent,i))
+
+    def path(self,parent,target):
+        if parent[target]==None:
+            return
+        index_to_vertex = {i: vertex.name for i, vertex in enumerate(self.vertices)}
+        
+        self.path(parent,parent[target])
+        print(index_to_vertex[parent[target]],end=" ->")
 
     
 if __name__=="__main__":
