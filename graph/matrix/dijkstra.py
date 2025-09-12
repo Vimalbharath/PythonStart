@@ -9,15 +9,20 @@ class GraphBFS(GraphMatrix):
         n=len(vertices)
         index=self.vertex_to_index
 
-        key=[math.inf]*n
-        visited=[False]*n
+        distance=[math.inf]*n
+        #visited=[False]*n
         s=index[source_vertex_name]
-        key[s],visited[s]=0,True
-        minheap=[(s,key[s])]
+        distance[s]=0
+        minheap=[(distance[s],s)]
         while minheap:
-            u,weight=heapq.heappop(minheap)
-            for i in range(len(n)):
-                
+            weight,u=heapq.heappop(minheap)
+            for i in range(n):
+                if self.matrix[u][i]!=math.inf and self.matrix[u][i]!=0:
+                    l=self.matrix[u][i]
+                    if l+weight<distance[i]:
+                        distance[i]=min(distance[i],l+weight)
+                        heapq.heappush(minheap,(distance[i],i))
+        print(distance)
 
     
 if __name__=="__main__":
