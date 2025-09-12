@@ -28,6 +28,11 @@ class GraphBFS(GraphMatrix):
         print(parent)
         for i in range(n):
             print(self.path(parent,i))
+        print("\nShortest Paths:")
+        for i in range(n):
+            print(f"Path to {self.vertices[i].name}:")
+            self.print_path(parent, i, self.vertex_to_index[source_vertex_name])
+
 
     def path(self,parent,target):
         if parent[target]==None:
@@ -36,6 +41,25 @@ class GraphBFS(GraphMatrix):
         
         self.path(parent,parent[target])
         print(index_to_vertex[parent[target]],end=" ->")
+
+    def print_path(self, parent, target, source_index):
+        path = []
+        index_to_vertex = {i: vertex.name for i, vertex in enumerate(self.vertices)}
+        current = target
+        while current is not None:
+            path.append(index_to_vertex[current])
+            if current == source_index:
+                break
+            current = parent[current]
+        
+        if path:
+            print(path)
+        #     path.reverse()
+        #     vertex_names = [self.vertices[i].name for i in path]
+        #     print(" -> ".join(vertex_names))
+        # else:
+        #     print(f"{self.vertices[target].name} is not reachable.")
+
 
     
 if __name__=="__main__":
