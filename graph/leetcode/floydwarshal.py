@@ -5,12 +5,27 @@ import math
 
 class Solution:
     def findTheCity(self, n: int, edges: List[List[int]], distanceThreshold: int) -> int:
-        dist=[[math.inf]*n]*n
+        dist=[[math.inf] * n for _ in range(n)]
         for i in range(n):
             for j in range(n):
                 if i==j:
                     dist[i][i]=0
+        for edge in edges:
+            dist[edge[0]][edge[1]]=edge[2]
+            dist[edge[1]][edge[0]]=edge[2]
+        for k in range(n):
+            for i in range(n):
+                for j in range(n):
+                    # if dist[i][j]> dist[i][k]+dist[k][j]:
+                        dist[i][j]=min((dist[i][k]+dist[k][j]),dist[i][j])
         print(dist)
+        ans=[0]*n
+        for i in range(n):
+            for j in range(n):
+                if dist[i][j]< distanceThreshold:
+                    ans[i]+=1
+        print(ans)
+
 
 
 if __name__=="__main__":
