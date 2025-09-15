@@ -22,6 +22,14 @@ class Solution:
                     key[v-1]=min(currdist+l,key[v-1])
                     heapq.heappush(minheap,(key[v-1],v))
         print(key)
+        ans=-1
+        for k in key:
+            if k==math.inf:
+                print(-1)
+                return 
+            else:
+                ans=max(ans,k)
+        print(ans)   
 
 
 
@@ -29,5 +37,5 @@ if __name__=="__main__":
     sol=Solution()
     times = [[2,1,1],[2,3,1],[3,4,1]]
     n = 4
-    k = 2
+    k = 1
     sol.networkDelayTime(times,n,k)
