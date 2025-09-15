@@ -22,9 +22,18 @@ class Solution:
         ans=[0]*n
         for i in range(n):
             for j in range(n):
-                if dist[i][j]< distanceThreshold:
+                if dist[i][j]<= distanceThreshold and not dist[i][j]==0:
                     ans[i]+=1
         print(ans)
+        temp=math.inf
+        for i in range(len(ans)):
+            temp=min(ans[i],temp)
+        print(temp)
+        temp2=0
+        for i in range(len(ans)):
+            if ans[i]==temp:
+                temp2=max(temp2,i)
+        print(temp2)
 
 
 
