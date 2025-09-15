@@ -13,16 +13,16 @@ class Solution:
         key=[math.inf]*(n)
         key[k-1]=0
         
-        for i in range(n):
-            for j in range(n):
-                if i==j:
-                    adj[i][i]=0
+        # for i in range(n):
+        #     for j in range(n):
+        #         if i==j:
+        #             adj[i][i]=0
         print(adj)
         for _ in range(n-1):
             for i in range(n):
                 for j in range(n):
                     weight=adj[i][j]
-                    if weight != math.inf and weight != 0:
+                    if weight != math.inf :
                          if key[i] != math.inf and key[i] + weight < key[j]:
                              key[j]=key[i]+weight
 
