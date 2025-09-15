@@ -109,4 +109,5 @@ gemini copy,
 
 September-14-2025 : Leetcode,courses try,copy gem sleepy,
 
-September-15-2025 : prove assignment,provinces debug and fixed,visit all rooms debug,problems skip,judge indegree outdegree,Floyd Warshall,N\*N matrix,algo good,problem modify success,dijstra confuse using 1-n
+September-15-2025 : prove assignment,provinces debug and fixed,visit all rooms debug,problems skip,judge indegree outdegree,Floyd Warshall,N\*N matrix,algo good,problem modify success,dijstra confuse using 1-n,
+bug in adj,

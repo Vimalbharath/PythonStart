@@ -8,19 +8,19 @@ class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         adj=[[]*n for _ in range(n)]
         for edge in times:
-            adj[edge[0]].append((edge[1],edge[2]))
+            adj[edge[0]-1].append((edge[1],edge[2]))
         key=[math.inf]*n
         key[k-1]=0
         minheap=[(key[k-1],k)]
         print(adj)
         while minheap:
             currdist,u=heapq.heappop(minheap)
-            for adjedge in adj[u] :
+            for adjedge in adj[u-1] :
                 v=adjedge[0]
                 l=adjedge[1]
                 if key[v-1]>currdist+l:
                     key[v-1]=min(currdist+l,key[v-1])
-                    heapq.heappush(minheap,(key[v-1],v-1))
+                    heapq.heappush(minheap,(key[v-1],v))
         print(key)
 
 
