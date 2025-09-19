@@ -112,4 +112,6 @@ September-14-2025 : Leetcode,courses try,copy gem sleepy,
 September-15-2025 : prove assignment,provinces debug and fixed,visit all rooms debug,problems skip,judge indegree outdegree,Floyd Warshall,N\*N matrix,algo good,problem modify success,dijstra confuse using 1-n,
 bug in adj,corrected to lc,bellman try half fail,i==j remove works still confused,
 
-September-18-2025 : DP,Fibo,2^n -- n,list to dict,tabulation but not rec relation,
+September-18-2025 : DP,Fibo,2^n -- n,list to dict,tabulation but not rec relation,0/1 Knapsack intro
+
+September-19-2025 : Subset variations,code rec 0/1 Knapsack,
