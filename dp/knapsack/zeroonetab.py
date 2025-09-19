@@ -2,10 +2,10 @@ def zeroone(val,w,weight,n):
     table=[[0]*(weight+1) for i in range(n+1)]
     for i in range(1,len(table)):
         for j in range(1,len(table[0])):
-            if weight<=w[n-1] :
-                table[i][j]=max((val[i-1]+table[weight-w[i-1]][j-1]),table[i][j-1])
+            if w[i-1]<=j:
+                table[i][j]=max((val[i-1]+table[i-1][j-w[i-1]]),table[i-1][j])
             else:
-                table[i][j]=table[i][j-1]
+                table[i][j]=table[i-1][j]
     return table
    
 
