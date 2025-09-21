@@ -116,4 +116,4 @@ September-18-2025 : DP,Fibo,2^n -- n,list to dict,tabulation but not rec relatio
 
 September-19-2025 : Subset variations,code rec 0/1 Knapsack,added memo,table without loop,loop ans wrong,only for 1 works,gemini corrected 3 line,subset sum table try,debuged table[i-1]j-arr[i-1]],lc equal sum ok time slow,lc target sum, count diff cases fail,gemini help 0 include cases,
 
-September-20-2025 : Unbounded Knapsack,boolean as well as count,rod cutting same but fails,
+September-20-2025 : Unbounded Knapsack,boolean as well as count,rod cutting same but fails,initialize first row,
