@@ -7,7 +7,7 @@ def howsum(price,n,memo={}):
         return None
     for i in price:
         newlength=n-i
-        result=howsum(price,newlength)
+        result=howsum(price,newlength,memo)
         if not result==None:
             result.append(i)
             memo[n]=result
