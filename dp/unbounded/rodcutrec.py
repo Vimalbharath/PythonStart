@@ -7,10 +7,11 @@ def rod(price,n):
         newlength=n-i
         result=rod(price,newlength)
         if not result==None:
-            return result.append(i)
+            result.append(i)
+            return result
     return None
     
 
 if __name__=="__main__":
-    price=[3,5,4,7]
+    price=[7,3,5,4]
     print(rod(price,7))
