@@ -1,16 +1,16 @@
-def rod(price,n,ans):
+def rod(price,n):
     if n==0:
-        return ans
+        return []
     if n<0:
-        return -1
+        return None
     for i in price:
         newlength=n-i
-        if newlength<=n:
-            ans.append(i)
-            if not rod(price,newlength,ans)==-1:
-                return ans
-    return -1
+        result=rod(price,newlength)
+        if not result==None:
+            return result.append(i)
+    return None
+    
 
 if __name__=="__main__":
-    price=[3, 5]
-    print(rod(price,9,[]))
+    price=[3,5,4,7]
+    print(rod(price,7))
