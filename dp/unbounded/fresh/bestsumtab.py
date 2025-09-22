@@ -11,7 +11,7 @@ def bestsum(arr,target,n):
             best_result = None
 
             if include_result is not None:
-                current_result = include_result + [arr[n-1]]
+                current_result = include_result + [arr[i-1]]
                 if best_result is None or len(current_result) < len(best_result):
                     best_result = current_result
                     
