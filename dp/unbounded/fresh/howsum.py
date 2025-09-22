@@ -12,5 +12,5 @@ def howsum(arr,target,n):
     return None
 
 if __name__=="__main__":
-    arr=[2,5]
+    arr=[2,11,5,6]
     print(howsum(arr,11,len(arr)))
