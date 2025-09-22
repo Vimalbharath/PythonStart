@@ -118,3 +118,5 @@ September-19-2025 : Subset variations,code rec 0/1 Knapsack,added memo,table wit
 
 September-20-2025 : Unbounded Knapsack,boolean as well as count,rod cutting same but fails,initialize first row,video confuse,rec try rod- input len(arr) or len,how sum ok,failed,how sum confuse,video not clear,rod to can how,best sum try,video copy best,memo how ok best fails,gemini corrected best memo,
 count try -gfg only rec no loop,
+
+September-22-2025 : 20 wrong->21,unbounded can sum rec success,
