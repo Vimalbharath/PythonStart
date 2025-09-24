@@ -122,4 +122,4 @@ count try -gfg only rec no loop,
 September-22-2025 : 20 wrong->21,unbounded can sum rec success,count success,how confuse gemini,how rec ok,
 best gem,table start,can sum perfect,count perfect,how perfect,best confused,best perfect,best try optimize,rod copied zeroone,
 
-September-24-2025 : LCS start,rec corrected index,
+September-24-2025 : LCS start,rec corrected index,added memo,
