@@ -124,4 +124,4 @@ best gem,table start,can sum perfect,count perfect,how perfect,best confused,bes
 
 September-24-2025 : LCS start,rec corrected index,added memo,table lite bug corrected,substring table ok rec fails,
 
-September-25-2025 : lcs print video- rev s[::-1],
+September-25-2025 : lcs print video- rev s[::-1],while and,

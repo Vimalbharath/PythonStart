@@ -14,7 +14,7 @@ def lcs(a,b):
     print(table)
     ans=''
     m,n=i,j
-    while i>0 or j>0:
+    while i>0 and j>0:
         if a[i-1]==b[j-1]:
             ans=ans+a[i-1]
             i=i-1
