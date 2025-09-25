@@ -123,3 +123,5 @@ September-22-2025 : 20 wrong->21,unbounded can sum rec success,count success,how
 best gem,table start,can sum perfect,count perfect,how perfect,best confused,best perfect,best try optimize,rod copied zeroone,
 
 September-24-2025 : LCS start,rec corrected index,added memo,table lite bug corrected,substring table ok rec fails,
+
+September-25-2025 : lcs print video- rev s[::-1],
