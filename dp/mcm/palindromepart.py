@@ -9,7 +9,7 @@ def partpalinh(s,i,j):
     if palindrome(s,i,j):
         return 0
     ans=math.inf
-    for k in range(i,j+1):
+    for k in range(i,j):
         temp=1+partpalinh(s,i,k)+partpalinh(s,k+1,j)
         ans=min(temp,ans)
     return ans
@@ -25,5 +25,5 @@ def palindrome(s,i,j):
     return True
 
 if __name__=="__main__":
-    s="malayalamh"
+    s="malayalamhu"
     print(partpalin(s))
