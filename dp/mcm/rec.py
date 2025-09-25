@@ -7,8 +7,8 @@ def mcmhelp(arr,i,j):
     if i>=j:
         return 0
     ans=math.inf
-    for k in range(i,j-1):
-        temp=mcmhelp(arr,i,k)+mcmhelp(arr,k+1,j)+(arr[i-1]*arr[k]*arr[k+1])
+    for k in range(i,j):
+        temp=mcmhelp(arr,i,k)+mcmhelp(arr,k+1,j)+(arr[i-1]*arr[k]*arr[j])
         ans=min(temp,ans)
     return ans
 
