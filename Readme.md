@@ -126,3 +126,5 @@ September-24-2025 : LCS start,rec corrected index,added memo,table lite bug corr
 
 September-25-2025 : lcs print video- rev s[::-1],while and,variations lps,repeat,print scss, MCM start,
 rec try inf,corrected,table complex diagnol,added memo mcm,palindrome partitioning try,range bug,added memo,
+
+September-26-2025 : boolean parenthesis count, scrambled string, egg dropping, video, boolean parenthesis try,
