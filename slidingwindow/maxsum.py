@@ -12,17 +12,17 @@ def maxsumslide(arr,k):
     i,j=0,0
     temp=0
     ans=0
-    while(not j==len(arr)-1):
-        window=j-i
-        
-        if window==k:
-            ans=max(temp,ans)
-            temp=temp-arr[i]
-            i=i+1
+    while(j<len(arr)):
+        window=j-i+1
         temp=temp+arr[j]
-        j=j+1
-            
-        
+        if window<k:
+            j=j+1
+        elif window==k:
+            ans=max(temp,ans)
+            j=j+1
+        if window>k:
+            temp=temp-arr[i]
+            i=i+1   
     return ans
 
 

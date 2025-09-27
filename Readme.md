@@ -129,4 +129,4 @@ rec try inf,corrected,table complex diagnol,added memo mcm,palindrome partitioni
 
 September-26-2025 : boolean parenthesis count, scrambled string, egg dropping, video, boolean parenthesis try,
 
-September-27-2025 : DP trees video, Sliding window n^k,n try -j miss,totally confused,
+September-27-2025 : DP trees video, Sliding window n^k,n try -j miss,totally confused,ans fail,
