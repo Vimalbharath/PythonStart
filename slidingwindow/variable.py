@@ -14,9 +14,9 @@ def minsubarrslide(arr,sum):
     ans=math.inf
     i,j=0,0
     wsum=0
-    while j<len(arr) :
-        wsum+=arr[j]
+    while j<len(arr) :    
         if wsum<sum:
+            wsum+=arr[j]
             j=j+1
         if wsum==sum:
             ans=min(ans,j-i+1)
@@ -24,7 +24,6 @@ def minsubarrslide(arr,sum):
             if i<len(arr):
                 wsum-=arr[i]
                 i=i+1
-                j=j+1
     return ans
 
 if __name__=="__main__":
