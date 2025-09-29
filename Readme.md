@@ -132,3 +132,5 @@ September-26-2025 : boolean parenthesis count, scrambled string, egg dropping, v
 September-27-2025 : DP trees video, Sliding window n^k,n try -j miss,totally confused,ans fail,
 
 September-28-2025 : sw ok,first negative implement,anagram try,variable n^n,added min,variable slide try,failing,video max confuse,6 line code for max, min not exactly = problem,unique substring copy,
+
+September-29-2025 : Prefix Sum, Range query LC try,
