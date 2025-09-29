@@ -12,7 +12,9 @@ class NumArray:
             self.prefix[i]=self.prefix[i-1]+nums[i]
 
     def sumRange(self, left: int, right: int) -> int:
-        ans=self.prefix[right]-self.prefix[left]
+        ans=self.prefix[right]
+        if not left==0:
+            ans=self.prefix[right]-self.prefix[left-1]
         return ans
         
 
