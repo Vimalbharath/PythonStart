@@ -5,11 +5,12 @@ from typing import List
 
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+        print(nums)
         sumLeft=[0 for i in range(len(nums))]
         sumRight=[0 for i in range(len(nums))]
         sumLeft[0]=nums[0]
-        sumRight[0]=nums[len(nums)-1]
-        for i in range(1,len(nums)-1):
+        sumRight[len(nums)-1]=nums[len(nums)-1]
+        for i in range(1,len(nums)):
             sumLeft[i]=sumLeft[i-1]+nums[i]
             sumRight[len(nums)-1-i]=sumRight[len(nums)-i]+nums[len(nums)-1-i]
         print(sumLeft)
