@@ -5,7 +5,8 @@ def remove(arr,ele):
         if arr[i]==ele:
             arr[i],arr[j]=arr[j],arr[i]
             j=j-1
-        i=i+1
+        else:
+            i=i+1
     return arr
 
 
