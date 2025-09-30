@@ -136,4 +136,4 @@ September-28-2025 : sw ok,first negative implement,anagram try,variable n^n,adde
 September-29-2025 : Prefix Sum, Range query LC try, perfect,high alt range mistake,corrected,pivot try,
 corrected using print,running sum both complexity,
 
-September-30-2025 : Two pointers, target sum n^2 complexity,n log(n) perfect,remove element try, gemini helped,
+September-30-2025 : Two pointers, target sum n^2 complexity,n log(n) perfect,remove element try, gemini helped,order maintain confuse copy,
