@@ -137,3 +137,5 @@ September-29-2025 : Prefix Sum, Range query LC try, perfect,high alt range mista
 corrected using print,running sum both complexity,
 
 September-30-2025 : Two pointers, target sum n^2 complexity,n log(n) perfect,remove element try, gemini helped,order maintain confuse copy,
+
+October-LLD,elevator,
